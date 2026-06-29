@@ -118,8 +118,6 @@ export default function GraceNetworkHome() {
           </div>
         </div>
       </section>
-
-      {/* WHY $10K */}
       <section className="section bg-white">
         <div className="kola-container max-w-3xl">
           <div className="text-center mb-8">
