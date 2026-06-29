@@ -57,7 +57,7 @@ export default function GraceNetworkHome() {
             <p className="mt-2 text-[#6B7280]">A breathtaking private winery overlooking Okanagan Lake. Dramatic granite, vineyards, and pure focus. In-person only. No hybrid.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800" alt="Glasses of champagne toasting at O'Rourke Winery celebration" className="rounded-2xl border w-full h-[320px] object-cover" />
+            <img src="https://images.unsplash.com/photo-pK78VhoJPiU?w=800" alt="Glasses of champagne toasting at O'Rourke Winery celebration" className="rounded-2xl border w-full h-[320px] object-cover" />
             <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800" alt="O'Rourke Winery, Lake Country - beautiful vineyard and lake setting" className="rounded-2xl border w-full h-[320px] object-cover" />
           </div>
         </div>
