@@ -21,9 +21,6 @@ export function Navbar() {
         </Link>
 
         <div className="flex items-center gap-8 text-sm font-medium">
-          <Link href="/workshop" className={`hover:text-[#C5A46E] transition-colors ${pathname === "/workshop" ? "text-[#C5A46E]" : ""}`}>
-            Workshop
-          </Link>
           <Link href="/accelerator" className={`hover:text-[#C5A46E] transition-colors ${pathname === "/accelerator" ? "text-[#C5A46E]" : ""}`}>
             Accelerator
           </Link>
@@ -36,9 +33,9 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link href="/workshop">
-            <Button size="sm" className="gold-btn px-6 rounded-full">Apply to Workshop</Button>
-          </Link>
+          <a href="https://calendar.gohighlevel.com/thegracenetworkai-private" target="_blank" rel="noopener noreferrer">
+            <Button size="sm" className="gold-btn px-6 rounded-full">Book 15-Min Consult</Button>
+          </a>
         </div>
       </div>
     </nav>

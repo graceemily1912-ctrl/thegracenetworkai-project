@@ -11,9 +11,8 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <Link href="/workshop" className="hover:text-[#0A1628]">The Workshop</Link>
-          <Link href="/accelerator" className="hover:text-[#0A1628]">The Accelerator</Link>
-          <Link href="/alumni" className="hover:text-[#0A1628]">Alumni Portal</Link>
+          <Link href="/accelerator" className="hover:text-[#0A1628]">The AI Accelerator</Link>
+          <Link href="/alumni" className="hover:text-[#0A1628]">Alumni</Link>
         </div>
 
         <div className="md:text-right space-y-1.5 text-xs">

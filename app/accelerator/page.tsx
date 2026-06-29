@@ -69,9 +69,9 @@ export default function AcceleratorPage() {
 
       <div className="kola-container pt-14 pb-20">
         <div className="max-w-4xl mx-auto">
-          <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">FOR WORKSHOP GRADUATES</div>
-          <h1 className="text-6xl tracking-[-2px] font-semibold mt-2">The Accelerator</h1>
-          <p className="text-2xl text-[#6B7280] mt-2">An exclusive experience available only to those who have completed the Workshop.</p>
+          <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">IN-PERSON • LAKE COUNTRY</div>
+          <h1 className="text-6xl tracking-[-2px] font-semibold mt-2">The AI Accelerator</h1>
+          <p className="text-2xl text-[#6B7280] mt-2">$10,000 base — paid upfront. Includes 15-min consult to confirm fit.</p>
 
           <div className="mt-8 grid md:grid-cols-5 gap-6">
             <div className="md:col-span-3 card-premium p-9 space-y-6 text-[15px]">
@@ -82,7 +82,7 @@ export default function AcceleratorPage() {
                 <li>• Focused guidance alongside a small peer cohort</li>
                 <li>• Private resources and follow-up pathways for graduates</li>
               </ul>
-              <div className="pt-4 text-sm border-t text-[#6B7280]">Frameworks and support. You do the focused implementation.</div>
+              <div className="pt-4 text-sm border-t text-[#6B7280]">The same systems running my businesses autonomously — delivering $60k+ ROI every year.</div>
             </div>
 
             <div className="md:col-span-2 card-premium p-9 bg-[#0A1628] text-white">
@@ -93,7 +93,33 @@ export default function AcceleratorPage() {
                 Small group or private options.<br />Limited dates available.
               </div>
 
-              <div className="text-xs tracking-widest uppercase">Invitation only after the Workshop</div>
+              <div className="text-xs tracking-widest uppercase">In-person at O&apos;Rourke Winery • Paid upfront</div>
+            </div>
+          </div>
+
+          {/* MEDIA PROOF TEASER */}
+          <div className="mt-6 text-center">
+            <p className="text-sm text-[#6B7280]">The exact systems from my own businesses — running autonomously with strong ROI.</p>
+            <div className="mt-3 flex justify-center gap-4">
+              <img src="/proof/linkedin-proof-system.png" alt="My autonomous signal system" className="h-20 rounded border" />
+              <img src="/proof/web-hero-automation-proof.png" alt="My automation in production" className="h-20 rounded border" />
+            </div>
+          </div>
+
+          {/* WHY THIS PRICE */}
+          <div className="mt-10 card-premium p-9">
+            <div className="uppercase tracking-widest text-xs text-[#C5A46E] mb-2">WHY $10,000</div>
+            <h3 className="text-2xl font-semibold tracking-tight">One focused day that pays for itself many times over.</h3>
+            <div className="mt-6 grid md:grid-cols-2 gap-6 text-[15px]">
+              <ul className="space-y-3">
+                <li>• You leave with working systems, not theory</li>
+                <li>• The frameworks have already been proven on real capital and real workflows</li>
+                <li>• Small group means direct access — no generic group coaching</li>
+                <li>• Graduates get private resources and follow-up pathways that stay available</li>
+              </ul>
+              <div className="text-[#6B7280]">
+                This is the same level of leverage I use in my own businesses. The media and live examples of my autonomous systems are shared only with Accelerator participants.
+              </div>
             </div>
           </div>
 
@@ -109,7 +135,7 @@ export default function AcceleratorPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <p className="mt-1 text-xs text-[#6B7280]">Status updates live. Try the demo email above after applying to Workshop.</p>
+              <p className="mt-1 text-xs text-[#6B7280]">Status updates live. Book the 15-min consult via the GHL link above.</p>
             </div>
 
             {userStatus && (
@@ -117,11 +143,11 @@ export default function AcceleratorPage() {
                 <div className="flex items-center gap-2 text-emerald-600">
                   <div className="live-dot" /> Connected to realtime records
                 </div>
-                <div className="mt-3 font-medium">Workshop attended: {userStatus.workshopAttended ? "YES ✓" : "NO"}</div>
+                <div className="mt-3 font-medium">Fit consult completed: {userStatus.workshopAttended ? "YES ✓" : "NO"}</div>
                 <div>Accelerator status: <span className="font-semibold uppercase">{userStatus.acceleratorStatus}</span></div>
 
                 {!userStatus.workshopAttended && (
-                  <p className="mt-4 text-[#C5A46E]">You must attend the Workshop before applying to the Accelerator.</p>
+                  <p className="mt-4 text-[#C5A46E]">Book the 15-minute consult first (included in the $10k paid upfront) to confirm fit.</p>
                 )}
 
                 {userStatus.workshopAttended && (
@@ -134,12 +160,12 @@ export default function AcceleratorPage() {
             )}
 
             {!userStatus && email && (
-              <p className="mt-4 text-xs text-[#6B7280]">No record yet. Submit a Workshop application first.</p>
+              <p className="mt-4 text-xs text-[#6B7280]">No record yet. Book the 15-min consult via the calendar to get started.</p>
             )}
           </div>
 
           <div className="text-center mt-8 text-xs">
-            <Link href="/workshop">← Back to Workshop</Link>
+            <Link href="/">← Back to The AI Accelerator</Link>
           </div>
         </div>
       </div>
