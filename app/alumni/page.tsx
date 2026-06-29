@@ -52,7 +52,7 @@ export default function AlumniPortal() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-10">
             <span className="text-[#C5A46E] tracking-[2px] uppercase text-xs">MEMBERS ONLY</span>
-            <h1 className="text-5xl tracking-[-1.6px] font-semibold">Alumni Portal</h1>
+            <h1 className="text-5xl tracking-[-1.6px] font-semibold">Alumni</h1>
           </div>
 
           {!verified && (
@@ -77,12 +77,12 @@ export default function AlumniPortal() {
                   </div>
                   <Button onClick={bookPrivate} className="navy-btn">Book Private Follow-up</Button>
                 </div>
-                <div className="text-sm mt-4">Your frameworks and progress are below. All IP is for attendees only.</div>
+                <div className="text-sm mt-4">Your resources and progress tracking are below.</div>
               </Card>
 
               {/* Assets Library */}
               <div>
-                <h2 className="font-semibold text-xl mb-4">Your Implementation Library</h2>
+                <h2 className="font-semibold text-xl mb-4">Resource Library</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {assets.length === 0 && <div className="text-sm p-6 border rounded">Assets will appear after first Accelerator. Seed via admin.</div>}
                   {assets.map((asset: any) => (
@@ -102,7 +102,7 @@ export default function AlumniPortal() {
               <div>
                 <h2 className="font-semibold text-xl mb-4">Implementation Progress</h2>
                 <Card className="card-premium p-7">
-                  {["pre-audit", "systems-mapping", "agent-deploy", "roi-review"].map((m, i) => (
+                  {["foundations", "systems-work", "implementation", "review"].map((m, i) => (
                     <div key={i} className="flex justify-between py-3 border-b last:border-0 items-center">
                       <div>{m.replace(/-/g, " ")}</div>
                       <Button size="sm" variant="ghost" onClick={() => userId && updateMilestone({ userId, milestoneKey: m, completed: true })}>

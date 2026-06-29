@@ -12,11 +12,11 @@ export function Navbar() {
       <div className="kola-container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-[#0A1628] flex items-center justify-center">
-            <span className="text-[#C5A46E] font-semibold tracking-tighter text-xl">K</span>
+            <span className="text-[#C5A46E] font-semibold tracking-tighter text-xl">G</span>
           </div>
           <div>
-            <div className="font-semibold tracking-[-0.5px] text-xl text-[#0A1628]">KOLA AI</div>
-            <div className="text-[10px] text-[#6B7280] -mt-1">KELowna</div>
+            <div className="font-semibold tracking-[-0.5px] text-xl text-[#0A1628]">The Grace Network</div>
+            <div className="text-[10px] text-[#6B7280] -mt-1">AI for Leaders</div>
           </div>
         </Link>
 

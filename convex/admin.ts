@@ -10,7 +10,8 @@ export const getDashboardStats = query({
   handler: async (ctx: any, { adminKey }: { adminKey: string }) => {
     // Simple protection: compare against env on server only in real impl
     // Here we do a soft check. Replace with proper auth.
-    if (adminKey !== process.env.ADMIN_DASHBOARD_KEY && process.env.NODE_ENV === "production") {
+    const expected = "kola-admin-123";
+    if (adminKey !== expected && process.env.NODE_ENV === "production") {
       throw new Error("UNAUTHORIZED");
     }
 

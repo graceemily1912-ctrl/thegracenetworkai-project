@@ -30,12 +30,12 @@ export default function AcceleratorPage() {
         email,
         type: "accelerator",
         answers: {
-          businessSystems: ["Ops", "CRM"],
-          currentChallenges: "Ready to scale automation and systems after Workshop.",
+          businessSystems: [],
+          currentChallenges: "Ready to implement at a higher level after completing the Workshop.",
           aiExperience: "intermediate",
           willingnessToLearn: 5,
           timeCommitment: "full-day",
-          specificGoals: "Implement full agent + ROI framework for 60k+ savings target.",
+          specificGoals: "Focused implementation and systems work.",
         },
       });
       toast.success("Accelerator application submitted.");
@@ -69,22 +69,20 @@ export default function AcceleratorPage() {
 
       <div className="kola-container pt-14 pb-20">
         <div className="max-w-4xl mx-auto">
-          <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">INVITATION ONLY</div>
-          <h1 className="text-6xl tracking-[-2px] font-semibold mt-2">The KOLA AI Accelerator</h1>
-          <p className="text-2xl text-[#6B7280] mt-2">One day. $10,000. Only Workshop attendees.</p>
+          <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">FOR WORKSHOP GRADUATES</div>
+          <h1 className="text-6xl tracking-[-2px] font-semibold mt-2">The Accelerator</h1>
+          <p className="text-2xl text-[#6B7280] mt-2">An exclusive experience available only to those who have completed the Workshop.</p>
 
           <div className="mt-8 grid md:grid-cols-5 gap-6">
             <div className="md:col-span-3 card-premium p-9 space-y-6 text-[15px]">
-              <div className="uppercase tracking-widest text-xs text-[#C5A46E]">WHAT YOU RECEIVE</div>
+              <div className="uppercase tracking-widest text-xs text-[#C5A46E]">WHAT TO EXPECT</div>
               <ul className="space-y-3 text-lg">
-                <li>• Pre-audit of your existing systems &amp; processes</li>
-                <li>• Full-day intensive group or private session in Kelowna</li>
-                <li>• 60-minute 1:1 private strategy time</li>
-                <li>• Complete library of reusable templates, agents &amp; roadmaps</li>
-                <li>• ROI framework targeting minimum $60,000 annual savings</li>
-                <li>• Gated alumni portal + direct booking for private follow-ups</li>
+                <li>• A full day dedicated to strategic clarity on your systems and opportunities</li>
+                <li>• High-leverage frameworks for implementation</li>
+                <li>• Focused guidance alongside a small peer cohort</li>
+                <li>• Private resources and follow-up pathways for graduates</li>
               </ul>
-              <div className="pt-4 text-sm border-t text-[#6B7280]">No custom build for you. We give you frameworks. You implement with support.</div>
+              <div className="pt-4 text-sm border-t text-[#6B7280]">Frameworks and support. You do the focused implementation.</div>
             </div>
 
             <div className="md:col-span-2 card-premium p-9 bg-[#0A1628] text-white">
@@ -92,10 +90,10 @@ export default function AcceleratorPage() {
               <div className="text-white/70 mt-1">CAD • One-time</div>
 
               <div className="my-8 text-sm space-y-2 text-white/80">
-                Group option or fully private.<br />Limited dates.
+                Small group or private options.<br />Limited dates available.
               </div>
 
-              <div className="text-xs tracking-widest">REVENUE MODEL: 10 PARTICIPANTS = $100K+ DAY</div>
+              <div className="text-xs tracking-widest uppercase">Invitation only after the Workshop</div>
             </div>
           </div>
 

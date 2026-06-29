@@ -16,9 +16,9 @@ export default function AdminClient() {
   // Only call Convex queries AFTER adminKey provided (prevents build prerender issues with stubs)
   const hasKey = !!adminKey && adminKey.length > 4;
 
-  const stats = hasKey ? useQuery(api.admin.getDashboardStats, { adminKey }) : null;
-  const apps = hasKey ? (useQuery(api.admin.listAllApplicationsWithUsers, { adminKey }) || []) : [];
-  const logs = hasKey ? (useQuery(api.admin.getAuditLogs, { adminKey }) || []) : [];
+  const stats = useQuery(api.admin.getDashboardStats, hasKey ? { adminKey } : "skip");
+  const apps = useQuery(api.admin.listAllApplicationsWithUsers, hasKey ? { adminKey } : "skip") || [];
+  const logs = useQuery(api.admin.getAuditLogs, hasKey ? { adminKey } : "skip") || [];
 
   const updateStatus = useMutation(api.applications.updateApplicationStatus);
   const overrideScore = useMutation(api.applications.overrideQualificationScore);
@@ -28,7 +28,7 @@ export default function AdminClient() {
   if (!adminKey) {
     return (
       <Card className="p-8 w-full max-w-sm bg-[#132A4A] border-[#C5A46E]/30 text-white">
-        <div className="text-[#C5A46E] text-sm tracking-[2px]">KOLA AI ADMIN</div>
+        <div className="text-[#C5A46E] text-sm tracking-[2px]">THE GRACE NETWORK — ADMIN</div>
         <h1 className="text-2xl mt-2">Enter Admin Key</h1>
         <Input
           type="password"

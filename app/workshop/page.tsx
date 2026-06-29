@@ -113,7 +113,7 @@ export default function WorkshopPage() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
             <div className="uppercase text-xs tracking-[3px] text-[#C5A46E]">IN-PERSON / HYBRID • KELOWNA, BC</div>
-            <h1 className="text-5xl tracking-[-1.8px] font-semibold mt-2">The KOLA AI Workshop</h1>
+            <h1 className="text-5xl tracking-[-1.8px] font-semibold mt-2">The Workshop</h1>
             <p className="text-xl mt-3 text-[#6B7280]">Your entry point. Qualify for the Accelerator.</p>
           </div>
 
@@ -259,12 +259,12 @@ export default function WorkshopPage() {
                     </div>
 
                     <div>
-                      <Label>Referral / How did you hear about KOLA AI?</Label>
+                      <Label>Referral / How did you hear about us?</Label>
                       <Input className="input-premium mt-1.5" value={form.referralSource} onChange={(e) => setForm({ ...form, referralSource: e.target.value })} />
                     </div>
 
                     <div className="pt-4 text-sm bg-[#F8F7F4] p-5 rounded-xl border">
-                      By submitting you agree to our <a href="#" className="underline">Privacy Policy</a> and consent to being contacted about KOLA AI programs. This qualifies you for the Accelerator upon successful attendance.
+                      By submitting you agree to our <a href="#" className="underline">Privacy Policy</a> and consent to being contacted about The Grace Network programs. Attendance at the Workshop is required to qualify for the Accelerator.
                     </div>
                   </div>
                 )}

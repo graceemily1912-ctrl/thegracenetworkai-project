@@ -1,5 +1,9 @@
 import { ConvexReactClient } from "convex/react";
 
-const url = process.env.NEXT_PUBLIC_CONVEX_URL || "https://placeholder.convex.cloud";
+const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
 
-export const convex = new ConvexReactClient(url);
+if (!convexUrl) {
+  console.warn("NEXT_PUBLIC_CONVEX_URL is not set. Using placeholder (app will not work properly).");
+}
+
+export const convex = new ConvexReactClient(convexUrl || "https://placeholder.convex.cloud");

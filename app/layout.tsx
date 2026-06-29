@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.thegracenetwork.ai"),
-  title: "KOLA AI | High-Leverage AI Implementation for Ambitious Leaders",
-  description: "Kelowna-based AI education and implementation. Attend the Workshop to qualify for the $10,000 Accelerator. Build systems that save $60k+ annually.",
+  title: "The Grace Network | AI for Ambitious Leaders",
+  description: "Exclusive experiences for ambitious leaders ready to integrate AI with intention. Begin with the Workshop.",
   icons: { icon: "/favicon.ico" },
   openGraph: {
-    title: "KOLA AI — Workshop & Accelerator",
-    description: "Premium AI implementation training. Workshop (qualifier) → $10k Accelerator. Kelowna, BC.",
+    title: "The Grace Network",
+    description: "High-leverage AI integration for ambitious leaders.",
     images: [{ url: "/og.png" }],
   },
 };
