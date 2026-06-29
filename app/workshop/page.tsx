@@ -112,9 +112,9 @@ export default function WorkshopPage() {
       <div className="kola-container pt-12 pb-20">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
-            <div className="uppercase text-xs tracking-[3px] text-[#C5A46E]">IN-PERSON / HYBRID • KELOWNA, BC</div>
-            <h1 className="text-5xl tracking-[-1.8px] font-semibold mt-2">The Workshop</h1>
-            <p className="text-xl mt-3 text-[#6B7280]">Your entry point. Qualify for the Accelerator.</p>
+            <div className="uppercase text-xs tracking-[3px] text-[#C5A46E]">IN-PERSON • LAKE COUNTRY, BC</div>
+            <h1 className="text-5xl tracking-[-1.8px] font-semibold mt-2">The AI Accelerator</h1>
+            <p className="text-xl mt-3 text-[#6B7280]">$10k base — paid upfront. Includes 15-min fit consult. At O&apos;Rourke Winery. No hybrid.</p>
           </div>
 
           {/* Pricing tiers + dates */}

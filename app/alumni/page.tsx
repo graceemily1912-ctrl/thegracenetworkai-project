@@ -19,7 +19,7 @@ export default function AlumniPortal() {
   const [userId, setUserId] = useState<any>(null);
 
   const userStatus = useQuery(api.users.getUserStatus, email ? { email } : "skip" as any);
-  const assets = useQuery(api.assets.listAssets) || [];
+  const assets = useQuery(api.assets.listAssets, {}) || [];
   const userProgress = useQuery(api.progress.getUserProgress, userId ? { userId } : "skip" as any);
 
   const updateMilestone = useMutation(api.progress.updateMilestone);
