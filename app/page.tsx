@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
@@ -57,14 +58,25 @@ export default function GraceNetworkHome() {
             <p className="mt-2 text-[#6B7280]">A breathtaking private winery overlooking Okanagan Lake. Dramatic granite, vineyards, and pure focus. In-person only. No hybrid.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <img src="https://images.unsplash.com/photo-pK78VhoJPiU?w=800" alt="Glasses of champagne toasting at O'Rourke Winery celebration" className="rounded-2xl border w-full h-[320px] object-cover" />
-            <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800" alt="O'Rourke Winery, Lake Country - beautiful vineyard and lake setting" className="rounded-2xl border w-full h-[320px] object-cover" />
+            <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.4, ease: "easeOut" }} className="overflow-hidden rounded-2xl border">
+              <img src="https://images.unsplash.com/photo-pK78VhoJPiU?w=800" alt="Glasses of champagne toasting at O'Rourke Winery celebration" className="w-full h-[320px] object-cover" />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.4, ease: "easeOut" }} className="overflow-hidden rounded-2xl border">
+              <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800" alt="O'Rourke Winery, Lake Country - beautiful vineyard and lake setting" className="w-full h-[320px] object-cover" />
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* WHAT YOU GET + PROOF */}
-      <section id="proof" className="section bg-[#F8F7F4]">
+      <motion.section 
+        id="proof" 
+        className="section bg-[#F8F7F4]"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div className="kola-container">
           <div className="text-center mb-8">
             <div className="text-[#C5A46E] text-sm tracking-[2px] font-medium">PROOF FROM MY BUSINESSES</div>
@@ -97,7 +109,13 @@ export default function GraceNetworkHome() {
             </div>
           </div>
 
-          <div className="mt-10">
+          <motion.div 
+            className="mt-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <h3 className="text-xl font-semibold tracking-tight mb-4 text-center">In the Accelerator, we'll deep dive into YOUR businesses — curated to exactly what you run.</h3>
             <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-[15px] max-w-3xl mx-auto">
               {[
@@ -115,9 +133,9 @@ export default function GraceNetworkHome() {
               ))}
             </div>
             <p className="mt-6 text-center text-sm text-[#6B7280]">Everything is customized to the actual businesses and challenges you bring to the table.</p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
       <section className="section bg-white">
         <div className="kola-container max-w-3xl">
           <div className="text-center mb-8">
