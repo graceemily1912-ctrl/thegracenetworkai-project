@@ -1,30 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://thegracenetwork.ai"),
-  title: "The Grace Network | Private AI Accelerator — $15,000",
+  title: "The Grace Network | A Private Day with Emily Grace",
   description:
-    "A private, fit-checked room for operators past the basics. Live products. Capital systems. Method stays offline. $15,000 CAD · O'Rourke Winery.",
+    "One private working day with the solo operator behind multiple six-figure businesses. $15,000 CAD · O'Rourke Winery · Lake Country, BC.",
   icons: { icon: "/favicon.ico" },
   openGraph: {
-    title: "The Grace Network — Private AI Accelerator",
+    title: "The Grace Network — A Private Day with Emily Grace",
     description:
-      "Not another AI course. A room you can't Google. $15,000 CAD · in-person only · Lake Country BC.",
+      "How to run more without life running you. One private day at O'Rourke Winery.",
     images: [{ url: "/og.png" }],
   },
 };
@@ -37,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col bg-[#F8F7F4] text-[#0A1628]">
         <ConvexClientProvider>
