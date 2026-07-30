@@ -59,8 +59,8 @@ export const createCheckoutSession = action({
       amount = ws.price;
       description = `KOLA AI Workshop - ${ws.tier}`;
     } else {
-      amount = 10000; // CAD
-      description = "KOLA AI Accelerator";
+      amount = 15000; // CAD
+      description = "The Grace Network — AI Accelerator";
     }
 
     const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://www.thegracenetwork.ai";

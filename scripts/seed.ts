@@ -42,7 +42,7 @@ async function main() {
     date: "2026-10-22",
     type: "group",
     capacity: 10,
-    price: 10000,
+    price: 15000,
   });
 
   console.log("Created cohort");

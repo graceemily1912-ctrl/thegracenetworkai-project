@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
+const CONSULT_URL = "https://calendar.gohighlevel.com/thegracenetworkai-private";
+
 export function Navbar() {
   const pathname = usePathname();
 
@@ -16,25 +18,30 @@ export function Navbar() {
           </div>
           <div>
             <div className="font-semibold tracking-[-0.5px] text-xl text-[#0A1628]">The Grace Network</div>
-            <div className="text-[10px] text-[#6B7280] -mt-1">AI for Leaders</div>
+            <div className="text-[10px] text-[#6B7280] -mt-1">AI Accelerator</div>
           </div>
         </Link>
 
-        <div className="flex items-center gap-8 text-sm font-medium">
-          <Link href="/accelerator" className={`hover:text-[#C5A46E] transition-colors ${pathname === "/accelerator" ? "text-[#C5A46E]" : ""}`}>
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/#why-15k" className="hover:text-[#C5A46E] transition-colors">
+            Why $15k
+          </a>
+          <a href="/#day" className="hover:text-[#C5A46E] transition-colors">
+            The Day
+          </a>
+          <Link
+            href="/accelerator"
+            className={`hover:text-[#C5A46E] transition-colors ${pathname === "/accelerator" ? "text-[#C5A46E]" : ""}`}
+          >
             Accelerator
-          </Link>
-          <Link href="/alumni" className={`hover:text-[#C5A46E] transition-colors ${pathname === "/alumni" ? "text-[#C5A46E]" : ""}`}>
-            Alumni
-          </Link>
-          <Link href="/admin" className="text-[#6B7280] hover:text-[#0A1628] text-xs font-mono tracking-widest">
-            ADMIN
           </Link>
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="https://calendar.gohighlevel.com/thegracenetworkai-private" target="_blank" rel="noopener noreferrer">
-            <Button size="sm" className="gold-btn px-6 rounded-full">Book 15-Min Consult</Button>
+          <a href={CONSULT_URL} target="_blank" rel="noopener noreferrer">
+            <Button size="sm" className="gold-btn px-6 rounded-full">
+              Book consult
+            </Button>
           </a>
         </div>
       </div>

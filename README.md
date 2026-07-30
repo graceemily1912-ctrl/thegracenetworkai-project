@@ -4,7 +4,7 @@ Complete high-ticket AI education & implementation platform for Emily Grace / KO
 
 **Business Rules Enforced:**
 - Workshop ($997–$2,997) is the **only** entry qualifier.
-- Accelerator ($10,000) is gated behind Workshop attendance.
+- Accelerator ($15,000 CAD) is gated behind Workshop attendance / fit consult.
 - No standalone low-ticket 1:1. IP lives in reusable frameworks.
 - High-leverage: 10 attendees = $100k+ revenue day.
 

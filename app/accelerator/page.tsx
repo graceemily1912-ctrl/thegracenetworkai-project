@@ -69,56 +69,83 @@ export default function AcceleratorPage() {
 
       <div className="kola-container pt-14 pb-20">
         <div className="max-w-4xl mx-auto">
-          <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">IN-PERSON • LAKE COUNTRY</div>
+          <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">IN-PERSON · LAKE COUNTRY</div>
           <h1 className="text-6xl tracking-[-2px] font-semibold mt-2">The AI Accelerator</h1>
-          <p className="text-2xl text-[#6B7280] mt-2">$10,000 base — paid upfront. Includes 15-min consult to confirm fit.</p>
+          <p className="text-2xl text-[#6B7280] mt-2">
+            $15,000 CAD — paid upfront. Includes 15-min consult to confirm fit.
+          </p>
+          <p className="mt-3 text-[#6B7280] max-w-2xl">
+            A private day with Emily Grace at O&apos;Rourke Winery. We transfer the autonomous systems
+            running her live products onto the businesses you walk in with — map, build, wire, leave
+            with a 90-day machine.
+          </p>
 
           <div className="mt-8 grid md:grid-cols-5 gap-6">
             <div className="md:col-span-3 card-premium p-9 space-y-6 text-[15px]">
               <div className="uppercase tracking-widest text-xs text-[#C5A46E]">WHAT TO EXPECT</div>
               <ul className="space-y-3 text-lg">
-                <li>• A full day dedicated to strategic clarity on your systems and opportunities</li>
-                <li>• High-leverage frameworks for implementation</li>
-                <li>• Focused guidance alongside a small peer cohort</li>
-                <li>• Private resources and follow-up pathways for graduates</li>
+                <li>• Full audit of how money, time, and decisions move through your businesses</li>
+                <li>• Live build of scan → filter → alert → execute → review systems for your stack</li>
+                <li>• Private or small-format access — direct guidance, not a webinar</li>
+                <li>• Roadmap + automation starters that keep working after the winery</li>
               </ul>
-              <div className="pt-4 text-sm border-t text-[#6B7280]">The same systems running my businesses autonomously — delivering $60k+ ROI every year.</div>
+              <div className="pt-4 text-sm border-t text-[#6B7280]">
+                Same class of systems behind AUVIE, Medvo, FamilyTerms, and Grace Network ops —
+                historical examples only; not financial advice.
+              </div>
             </div>
 
             <div className="md:col-span-2 card-premium p-9 bg-[#0A1628] text-white">
-              <div className="text-5xl font-semibold tracking-tighter">$10,000</div>
-              <div className="text-white/70 mt-1">CAD • One-time</div>
+              <div className="text-5xl font-semibold tracking-tighter">$15,000</div>
+              <div className="text-white/70 mt-1">CAD · One-time</div>
 
               <div className="my-8 text-sm space-y-2 text-white/80">
-                Small group or private options.<br />Limited dates available.
+                Private or small group.
+                <br />
+                Limited dates at O&apos;Rourke Winery.
               </div>
 
-              <div className="text-xs tracking-widest uppercase">In-person at O&apos;Rourke Winery • Paid upfront</div>
+              <div className="text-xs tracking-widest uppercase">In-person only · Paid upfront</div>
+              <a
+                href="https://calendar.gohighlevel.com/thegracenetworkai-private"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-block text-sm text-[#C5A46E] hover:underline"
+              >
+                Book 15-min fit consult →
+              </a>
             </div>
           </div>
 
-          {/* MEDIA PROOF TEASER */}
           <div className="mt-6 text-center">
-            <p className="text-sm text-[#6B7280]">The exact systems from my own businesses — running autonomously with strong ROI.</p>
+            <p className="text-sm text-[#6B7280]">
+              Systems from my own businesses — running autonomously. Historical examples only.
+            </p>
             <div className="mt-3 flex justify-center gap-4">
-              <img src="/proof/linkedin-proof-system.png" alt="My autonomous signal system" className="h-20 rounded border" />
-              <img src="/proof/web-hero-automation-proof.png" alt="My automation in production" className="h-20 rounded border" />
+              <img src="/proof/linkedin-proof-system.png" alt="Autonomous signal system" className="h-20 rounded border" />
+              <img src="/proof/web-hero-automation-proof.png" alt="Automation in production" className="h-20 rounded border" />
             </div>
           </div>
 
-          {/* WHY THIS PRICE */}
           <div className="mt-10 card-premium p-9">
-            <div className="uppercase tracking-widest text-xs text-[#C5A46E] mb-2">WHY $10,000</div>
-            <h3 className="text-2xl font-semibold tracking-tight">One focused day that pays for itself many times over.</h3>
+            <div className="uppercase tracking-widest text-xs text-[#C5A46E] mb-2">WHY $15,000</div>
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Compressed operator pattern recognition — not a day of talking.
+            </h3>
             <div className="mt-6 grid md:grid-cols-2 gap-6 text-[15px]">
               <ul className="space-y-3">
-                <li>• You leave with working systems, not theory</li>
-                <li>• The frameworks have already been proven on real capital and real workflows</li>
-                <li>• Small group means direct access — no generic group coaching</li>
-                <li>• Graduates get private resources and follow-up pathways that stay available</li>
+                <li>• Agencies charge $25k–$75k for half this scope over months</li>
+                <li>• A fractional AI/ops lead runs $8k–$15k per month</li>
+                <li>• Founder-time leak alone often exceeds $60k/year</li>
+                <li>• You leave with working systems + a 90-day roadmap</li>
               </ul>
               <div className="text-[#6B7280]">
-                This is the same level of leverage I use in my own businesses. The media and live examples of my autonomous systems are shared only with Accelerator participants.
+                The price filters for people ready to implement and reflects private time with
+                someone who already ships live products on these systems. Full value case on the{" "}
+                <Link href="/#why-15k" className="text-[#0A1628] underline underline-offset-2">
+                  homepage
+                </Link>
+                .
               </div>
             </div>
           </div>
@@ -147,13 +174,19 @@ export default function AcceleratorPage() {
                 <div>Accelerator status: <span className="font-semibold uppercase">{userStatus.acceleratorStatus}</span></div>
 
                 {!userStatus.workshopAttended && (
-                  <p className="mt-4 text-[#C5A46E]">Book the 15-minute consult first (included in the $10k paid upfront) to confirm fit.</p>
+                  <p className="mt-4 text-[#C5A46E]">
+                    Book the 15-minute consult first (included in the $15k paid upfront) to confirm fit.
+                  </p>
                 )}
 
                 {userStatus.workshopAttended && (
                   <div className="mt-5 flex flex-wrap gap-3">
-                    <Button onClick={applyToAccelerator} className="gold-btn rounded-full px-8">Submit Accelerator Application</Button>
-                    <Button onClick={payForAccelerator} variant="outline" className="rounded-full border-[#0A1628] px-8">Pay $10,000 now (if pre-approved)</Button>
+                    <Button onClick={applyToAccelerator} className="gold-btn rounded-full px-8">
+                      Submit Accelerator Application
+                    </Button>
+                    <Button onClick={payForAccelerator} variant="outline" className="rounded-full border-[#0A1628] px-8">
+                      Pay $15,000 now (if pre-approved)
+                    </Button>
                   </div>
                 )}
               </div>

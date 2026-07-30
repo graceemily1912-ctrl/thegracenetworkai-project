@@ -93,7 +93,7 @@ export default defineSchema({
     type: v.union(v.literal("group"), v.literal("private")),
     capacity: v.number(),
     spotsTaken: v.number(),
-    price: v.number(), // 10000
+    price: v.number(), // 15000
     status: v.union(v.literal("open"), v.literal("closed"), v.literal("past")),
     facilitatorNotes: v.optional(v.string()),
     createdAt: v.number(),
