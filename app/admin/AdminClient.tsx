@@ -63,7 +63,8 @@ export default function AdminClient() {
             ["Total Users", stats.totalUsers],
             ["Fit Sessions", stats.workshopAttendees],
             ["Private Days Paid", stats.acceleratorPaid],
-            ["Total Revenue (CAD)", `$${stats.totalRevenue}`],
+            ["Revenue (USD)", `$${stats.usdRevenue}`],
+            ["Legacy Revenue (CAD)", `$${stats.cadRevenue}`],
           ].map(([label, val]) => (
             <Card key={String(label)} className="p-6 card-premium">
               <div className="text-xs uppercase tracking-widest">{label}</div>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://thegracenetwork.ai"),
   title: "The Grace Network | A Private Day with Emily Grace",
   description:
-    "One private working day with the solo operator behind multiple six-figure businesses. $15,000 CAD · O'Rourke Winery · Lake Country, BC.",
+    "One private working day with the solo operator behind multiple six-figure businesses. $15,000 USD · O'Rourke Winery · Lake Country, BC.",
   icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "The Grace Network — A Private Day with Emily Grace",

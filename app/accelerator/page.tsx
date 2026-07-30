@@ -80,7 +80,7 @@ export default function PrivateDayPage() {
             <div className="portal-facts">
               <span>One day</span>
               <span>O&apos;Rourke Winery</span>
-              <span>$15,000 CAD</span>
+              <span>$15,000 USD</span>
               <span>Everyone signs an NDA</span>
             </div>
             <a href={CONSULT_URL} target="_blank" rel="noreferrer" className="primary-link dark">

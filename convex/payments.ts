@@ -17,7 +17,7 @@ export const createCheckoutSession = action({
   },
   handler: async (ctx, args): Promise<{ url: string | null; sessionId: string }> => {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-      apiVersion: "2025-02-24.acacia",
+      apiVersion: "2026-07-29.dahlia",
     });
 
     // Ensure user exists
@@ -48,6 +48,7 @@ export const createCheckoutSession = action({
     // Pricing
     let amount = 0;
     let description = "";
+    let currency: "cad" | "usd" = "cad";
 
     if (args.type === "workshop") {
       if (!args.workshopId) throw new Error("workshopId required");
@@ -59,23 +60,27 @@ export const createCheckoutSession = action({
       amount = ws.price;
       description = `KOLA AI Workshop - ${ws.tier}`;
     } else {
-      amount = 15000; // CAD
-      description = "The Grace Network — AI Accelerator";
+      amount = 15000;
+      currency = "usd";
+      description = "The Grace Network — Private Operator's Day";
     }
 
     const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://www.thegracenetwork.ai";
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
+      integration_identifier: "grace_private_day_qjmxvbrk",
       mode: "payment",
       customer_email: user.email,
       line_items: [
         {
           price_data: {
-            currency: "cad",
+            currency,
             product_data: {
               name: description,
-              description: "Kelowna, BC | High-Leverage AI Implementation",
+              description:
+                args.type === "accelerator"
+                  ? "Private working day with Emily Grace at O'Rourke Winery"
+                  : "In-person workshop in Lake Country, BC",
             },
             unit_amount: amount * 100, // cents
           },
@@ -101,6 +106,7 @@ export const createCheckoutSession = action({
       type: args.type,
       stripeSessionId: session.id,
       amount,
+      currency,
       workshopId: args.workshopId,
       cohortId: args.cohortId,
     });
@@ -116,6 +122,7 @@ export const createPendingPaymentInternal = internalMutation({
     type: v.union(v.literal("workshop"), v.literal("accelerator")),
     stripeSessionId: v.string(),
     amount: v.number(),
+    currency: v.union(v.literal("cad"), v.literal("usd")),
     workshopId: v.optional(v.id("workshops")),
     cohortId: v.optional(v.id("acceleratorCohorts")),
   },
@@ -125,7 +132,7 @@ export const createPendingPaymentInternal = internalMutation({
       type: args.type,
       stripeSessionId: args.stripeSessionId,
       amount: args.amount,
-      currency: "cad",
+      currency: args.currency,
       status: "pending",
       workshopId: args.workshopId,
       cohortId: args.cohortId,
@@ -141,7 +148,7 @@ export const handleStripeWebhookInternal = internalMutation({
   args: { event: v.any() },
   handler: async (ctx, { event }) => {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-      apiVersion: "2025-02-24.acacia",
+      apiVersion: "2026-07-29.dahlia",
     });
 
     if (event.type === "checkout.session.completed") {

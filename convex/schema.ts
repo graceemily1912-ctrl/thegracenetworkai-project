@@ -107,7 +107,8 @@ export default defineSchema({
     stripeSessionId: v.string(),
     stripePaymentIntentId: v.optional(v.string()),
     amount: v.number(),
-    currency: v.literal("cad"), // CAD for Canada
+    // Keep CAD valid for historical workshop payments; new private-day payments are USD.
+    currency: v.union(v.literal("cad"), v.literal("usd")),
     status: v.union(
       v.literal("pending"),
       v.literal("succeeded"),

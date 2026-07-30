@@ -48,7 +48,7 @@ export default function GraceNetworkHome() {
               <a className="primary-link" href={CONSULT_URL} target="_blank" rel="noreferrer">
                 See if it&apos;s a fit <ArrowRight size={17} />
               </a>
-              <span>$15,000 CAD · In person only</span>
+              <span>$15,000 USD · In person only</span>
             </div>
           </div>
         </div>
@@ -136,10 +136,10 @@ export default function GraceNetworkHome() {
           <div>
             <div className="eyebrow">The price</div>
             <div className="price">$15,000</div>
-            <p>CAD · paid upfront · one private day</p>
+            <p>USD · paid upfront · one private day</p>
           </div>
           <div className="price-copy">
-            <h2>One day. $15,000 CAD.</h2>
+            <h2>One day. $15,000 USD.</h2>
             <p>
               Paid upfront. My working time is scarce, and the room stays small.
               You come for clear decisions, not more material.

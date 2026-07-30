@@ -110,7 +110,7 @@ export default function WorkshopPage() {
             <div className="uppercase text-xs tracking-[3px] text-[#C5A46E]">IN-PERSON • LAKE COUNTRY, BC</div>
             <h1 className="text-5xl tracking-[-1.8px] font-semibold mt-2">Apply for the Private Day</h1>
             <p className="text-xl mt-3 text-[#6B7280]">
-              $15,000 CAD — paid upfront. Includes 15-min fit consult. At O&apos;Rourke Winery. In-person only.
+              $15,000 USD — paid upfront. Includes 15-min fit consult. At O&apos;Rourke Winery. In-person only.
             </p>
           </div>
 

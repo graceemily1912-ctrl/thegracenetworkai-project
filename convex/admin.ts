@@ -32,8 +32,11 @@ export const getDashboardStats = query({
       acceleratorPaid: users.filter((u) => u.acceleratorStatus === "paid").length,
       applicationsSubmitted: applications.length,
       applicationsApproved: applications.filter((a) => a.status === "approved").length,
-      totalRevenue: payments
-        .filter((p) => p.status === "succeeded")
+      usdRevenue: payments
+        .filter((p) => p.status === "succeeded" && p.currency === "usd")
+        .reduce((sum, p) => sum + p.amount, 0),
+      cadRevenue: payments
+        .filter((p) => p.status === "succeeded" && p.currency === "cad")
         .reduce((sum, p) => sum + p.amount, 0),
       workshopRevenue: payments
         .filter((p) => p.type === "workshop" && p.status === "succeeded")
