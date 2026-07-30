@@ -72,26 +72,24 @@ export default function AcceleratorPage() {
           <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">IN-PERSON · LAKE COUNTRY</div>
           <h1 className="text-6xl tracking-[-2px] font-semibold mt-2">The AI Accelerator</h1>
           <p className="text-2xl text-[#6B7280] mt-2">
-            $15,000 CAD — paid upfront. Includes 15-min consult to confirm fit.
+            $15,000 CAD — paid upfront. Includes 15-min fit consult.
           </p>
           <p className="mt-3 text-[#6B7280] max-w-2xl">
-            A private day with Emily Grace at O&apos;Rourke Winery. We transfer the autonomous systems
-            running her live products onto the businesses you walk in with — map, build, wire, leave
-            with a 90-day machine.
+            A private room with Emily Grace at O&apos;Rourke Winery — for people past the basics.
+            Live products. Capital systems. Agent infrastructure. The playbook is not published online.
           </p>
 
           <div className="mt-8 grid md:grid-cols-5 gap-6">
             <div className="md:col-span-3 card-premium p-9 space-y-6 text-[15px]">
-              <div className="uppercase tracking-widest text-xs text-[#C5A46E]">WHAT TO EXPECT</div>
+              <div className="uppercase tracking-widest text-xs text-[#C5A46E]">TEASER ONLY</div>
               <ul className="space-y-3 text-lg">
-                <li>• Full audit of how money, time, and decisions move through your businesses</li>
-                <li>• Live build of scan → filter → alert → execute → review systems for your stack</li>
-                <li>• Private or small-format access — direct guidance, not a webinar</li>
-                <li>• Roadmap + automation starters that keep working after the winery</li>
+                <li>• Systems that already print — protection, analysis, install, optimize</li>
+                <li>• Multi-business operator patterns (products + capital + life)</li>
+                <li>• A room of peers who already get the basics</li>
+                <li>• Method stays offline — nothing Googleable on purpose</li>
               </ul>
               <div className="pt-4 text-sm border-t text-[#6B7280]">
-                Same class of systems behind AUVIE, Medvo, FamilyTerms, and Grace Network ops —
-                historical examples only; not financial advice.
+                Historical examples only. Not financial advice. Not a step-by-step public curriculum.
               </div>
             </div>
 
@@ -130,22 +128,21 @@ export default function AcceleratorPage() {
           <div className="mt-10 card-premium p-9">
             <div className="uppercase tracking-widest text-xs text-[#C5A46E] mb-2">WHY $15,000</div>
             <h3 className="text-2xl font-semibold tracking-tight">
-              Compressed operator pattern recognition — not a day of talking.
+              The price is a filter. The room is the product.
             </h3>
             <div className="mt-6 grid md:grid-cols-2 gap-6 text-[15px]">
               <ul className="space-y-3">
-                <li>• Agencies charge $25k–$75k for half this scope over months</li>
-                <li>• A fractional AI/ops lead runs $8k–$15k per month</li>
-                <li>• Founder-time leak alone often exceeds $60k/year</li>
-                <li>• You leave with working systems + a 90-day roadmap</li>
+                <li>• Keeps tourists and free-tactic hunters out</li>
+                <li>• Fills seats with people who already have the basics</li>
+                <li>• Private access to a multi-business operator</li>
+                <li>• Method is not re-sold as a downloadable course</li>
               </ul>
               <div className="text-[#6B7280]">
-                The price filters for people ready to implement and reflects private time with
-                someone who already ships live products on these systems. Full value case on the{" "}
+                Full teaser and value case on the{" "}
                 <Link href="/#why-15k" className="text-[#0A1628] underline underline-offset-2">
                   homepage
                 </Link>
-                .
+                . Fit consult first — mutual yes only.
               </div>
             </div>
           </div>

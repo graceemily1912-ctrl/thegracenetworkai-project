@@ -23,11 +23,11 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="/#room" className="hover:text-[#C5A46E] transition-colors">
+            The Room
+          </a>
           <a href="/#why-15k" className="hover:text-[#C5A46E] transition-colors">
             Why $15k
-          </a>
-          <a href="/#day" className="hover:text-[#C5A46E] transition-colors">
-            The Day
           </a>
           <Link
             href="/accelerator"

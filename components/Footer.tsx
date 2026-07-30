@@ -7,17 +7,17 @@ export function Footer() {
         <div>
           <div className="font-semibold text-[#0A1628] tracking-tight">The Grace Network</div>
           <div className="mt-1">
-            Private AI Accelerator for founders who want systems that run without them.
+            Private AI Accelerator — a room you can&apos;t Google. Method stays offline.
           </div>
           <div className="mt-4 text-xs">Lake Country · Kelowna, British Columbia, Canada</div>
         </div>
 
         <div className="flex flex-col gap-1.5">
+          <a href="/#room" className="hover:text-[#0A1628]">
+            The room
+          </a>
           <a href="/#why-15k" className="hover:text-[#0A1628]">
             Why $15,000
-          </a>
-          <a href="/#day" className="hover:text-[#0A1628]">
-            The day
           </a>
           <Link href="/accelerator" className="hover:text-[#0A1628]">
             Accelerator

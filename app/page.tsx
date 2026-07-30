@@ -1,21 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import {
   ArrowRight,
   Check,
-  Clock,
+  Lock,
   MapPin,
   Shield,
   Sparkles,
-  Target,
   Users,
   X,
-  Zap,
 } from "lucide-react";
 
 const CONSULT_URL = "https://calendar.gohighlevel.com/thegracenetworkai-private";
@@ -30,101 +27,83 @@ const fadeUp = {
 const portfolio = [
   {
     name: "AUVIE",
-    tag: "Education · Live product",
-    blurb: "Life-skills app for children with neurological conditions + caregiver portal — product, AI content systems, and shipping cadence.",
+    tag: "Live · Education",
+    blurb: "Shipping a life-skills product for families — not a pitch deck.",
     href: "https://www.auvie.app",
   },
   {
     name: "Medvo",
-    tag: "Health · Live product",
-    blurb: "Patient-advocacy letter app for chronically ill people — ops automation so advocacy scales without a bigger team.",
+    tag: "Live · Health",
+    blurb: "Patient advocacy product in market. Real users. Real constraints.",
     href: "https://www.medvo.io",
   },
   {
     name: "FamilyTerms",
-    tag: "Family · Live product",
-    blurb: "Parenting-plan product: intake to paid plan in one sitting. Systems that convert complexity into a clean customer path.",
+    tag: "Live · Family",
+    blurb: "Parenting-plan product designed to convert complexity into a clean path.",
     href: "https://www.familyterms.com",
   },
   {
-    name: "Grace Network Ops",
-    tag: "Trading & capital systems",
-    blurb: "Autonomous scanning, signal rules, execution checklists, and review loops — the same class of systems we transfer in the day.",
-    href: "https://thegracenetwork.ai",
+    name: "Capital systems",
+    tag: "Live · Trading ops",
+    blurb: "Operator systems on real capital — shown as historical examples only.",
+    href: "#room",
   },
 ];
 
-const dayAgenda = [
+const inTheRoom = [
   {
-    time: "09:00",
-    title: "Map the machine",
-    body: "Full audit of how money, time, and decisions currently move through your businesses — CRM, ops, marketing, finance, support, research.",
+    title: "Systems that already print",
+    body: "You see the private operating layer behind multi-figure days — how it is protected, reviewed, and kept from breaking. Not a public playbook.",
   },
   {
-    time: "10:30",
-    title: "Find the $ leaks",
-    body: "Identify the manual loops that cost you founder hours, missed signals, and slow decisions. Rank by ROI, not by what feels urgent.",
+    title: "Agent infrastructure that ships",
+    body: "How operators install, harden, and optimize agents across a real stack — the judgment calls that never make it into a YouTube tutorial.",
   },
   {
-    time: "12:00",
-    title: "Build the stack (live)",
-    body: "Design and start implementing autonomous scanning, rule-based execution, and self-improving review loops for your actual stack.",
+    title: "Multi-business leverage",
+    body: "One person. Multiple live products. Capital systems. Parenting. Charity. The architecture that makes that possible without burning out the founder.",
   },
   {
-    time: "14:30",
-    title: "Wire agents into your tools",
-    body: "Alerts, decisions, and actions that fit tools you already use — so the system runs without a second full-time hire.",
-  },
-  {
-    time: "16:00",
-    title: "Leave with a 90-day machine",
-    body: "A prioritized roadmap, working automation starters, and the operating rules your team can run without you in the room.",
+    title: "A room at your level",
+    body: "People who already have the basics. Smart peers. No “how do I get Claude to write my emails” energy. Curated on purpose.",
   },
 ];
 
-const outcomes = [
-  "A written map of your current systems and where leverage actually lives",
-  "Custom autonomous scanning / opportunity detection for your niche",
-  "Rule-based execution checklists tailored to your team and process",
-  "Self-running review loops so performance compounds after the day",
-  "Agent / automation integrations that fit your existing stack",
-  "A 90-day implementation roadmap you can execute without hand-holding",
+const notInTheRoom = [
+  "Prompt courses and chat-bot hobbyists",
+  "People hunting free tactics to recreate at home",
+  "Anyone who wants a recording instead of the room",
+  "Operators who are still deciding whether AI is “real”",
 ];
 
 const forWho = [
-  "Founders running one or more real businesses (not idea-stage)",
-  "Operators who already feel the drag of manual scanning and decisions",
-  "Leaders ready to implement the same day — not collect another course",
-  "People who value private, in-person work over webinar content",
-];
-
-const notFor = [
-  "Anyone looking for trading tips or guaranteed returns",
-  "Teams that want a passive video course or group Zoom",
-  "Operators who will not change how work gets done",
-  "People shopping the cheapest AI workshop on the internet",
+  "You already use AI daily — you are past the basics",
+  "You run real revenue, real products, or real capital",
+  "You want to sit with operators, not collect another course",
+  "You understand $15k is a filter, not a bargain bin",
 ];
 
 const valueStack = [
   {
-    label: "What an agency charges for half of this",
+    label: "Public AI content (unlimited)",
+    value: "Free–$2k",
+    detail: "Prompts, templates, and mailing-list tricks. Commodity. Googleable tomorrow.",
+  },
+  {
+    label: "Agency “AI transformation”",
     value: "$25k–$75k",
-    detail: "Discovery, architecture, and a first automation slice — often over months, with junior delivery.",
+    detail: "Months of decks and junior delivery. You still own the hard judgment calls.",
   },
   {
-    label: "Fractional AI / ops lead (one month)",
-    value: "$8k–$15k",
-    detail: "You pay that monthly for someone still learning your business. This day compresses the architecture decision.",
+    label: "What one strong operating day is worth",
+    value: "6 figures*",
+    detail: "When systems fire correctly, a single day can move serious capital or pipeline. Historical. Not typical. Not promised.",
   },
   {
-    label: "Founder time leak (conservative)",
-    value: "$60k+/yr",
-    detail: "8 hours/week × ~$150/hr × 50 weeks. Manual chaos is expensive even before missed opportunity.",
-  },
-  {
-    label: "The AI Accelerator day",
+    label: "The room — private day",
     value: "$15,000",
-    detail: "One focused day with someone who already runs multiple live products on these systems — not a slide deck.",
+    detail: "In-person. Fit-checked. Built for people who already get it. The method stays in the room.",
   },
 ];
 
@@ -149,7 +128,7 @@ export default function GraceNetworkHome() {
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs tracking-[2px] text-[#C5A46E] mb-6"
               >
                 <span className="live-dot" />
-                ACCEPTING FIT CONSULTS · LAKE COUNTRY, BC
+                PRIVATE ROOM · FIT-CHECKED · LAKE COUNTRY, BC
               </motion.div>
 
               <motion.h1
@@ -158,9 +137,9 @@ export default function GraceNetworkHome() {
                 transition={{ duration: 0.6, delay: 0.05 }}
                 className="text-5xl md:text-7xl font-semibold tracking-[-2.2px] leading-[0.95]"
               >
-                One day with me.
+                Not another AI course.
                 <br />
-                <span className="text-[#C5A46E]">Systems that run without you.</span>
+                <span className="text-[#C5A46E]">A room you can&apos;t Google.</span>
               </motion.h1>
 
               <motion.p
@@ -169,10 +148,9 @@ export default function GraceNetworkHome() {
                 transition={{ duration: 0.6, delay: 0.12 }}
                 className="mt-6 max-w-xl text-lg md:text-xl text-white/80 leading-relaxed"
               >
-                I build and operate multiple live tech products with autonomous AI systems —
-                scanning, deciding, executing, reviewing — so the business compounds while I&apos;m offline.
-                The AI Accelerator is a private, in-person day where we transfer that operating system
-                onto <em>your</em> businesses.
+                For people who already have the basics — and want to sit with operators who ship.
+                Products in market. Capital systems on the desk. Agents that actually run.
+                The playbook is not on this page on purpose.
               </motion.p>
 
               <motion.div
@@ -183,16 +161,16 @@ export default function GraceNetworkHome() {
               >
                 <a href={CONSULT_URL} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="gold-btn h-14 px-9 text-base rounded-full flex items-center gap-2 w-full sm:w-auto">
-                    Book your 15-min fit consult <ArrowRight className="w-4 h-4" />
+                    Request a fit consult <ArrowRight className="w-4 h-4" />
                   </Button>
                 </a>
-                <a href="#why-15k">
+                <a href="#room">
                   <Button
                     size="lg"
                     variant="outline"
                     className="h-14 px-9 text-base rounded-full border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white w-full sm:w-auto"
                   >
-                    Why $15k for one day
+                    What the room is
                   </Button>
                 </a>
               </motion.div>
@@ -209,15 +187,17 @@ export default function GraceNetworkHome() {
               className="lg:col-span-4"
             >
               <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-7 space-y-5">
-                <div className="text-xs tracking-[2px] text-[#C5A46E]">THE OFFER</div>
+                <div className="flex items-center gap-2 text-xs tracking-[2px] text-[#C5A46E]">
+                  <Lock className="w-3.5 h-3.5" /> THE AI ACCELERATOR
+                </div>
                 <div className="text-5xl font-semibold tracking-tighter">$15,000</div>
                 <div className="text-white/70 text-sm">CAD · One day · One-time</div>
                 <ul className="space-y-3 text-sm text-white/85">
                   {[
-                    "Private day at O'Rourke Winery",
-                    "Built on systems from my live products",
-                    "Working automations, not theory",
-                    "15-min fit consult included",
+                    "Private room — not a webinar",
+                    "Peers who already get the basics",
+                    "Live systems from a multi-business operator",
+                    "Method stays offline",
                   ].map((item) => (
                     <li key={item} className="flex gap-2 items-start">
                       <Check className="w-4 h-4 text-[#C5A46E] mt-0.5 flex-none" />
@@ -226,13 +206,12 @@ export default function GraceNetworkHome() {
                   ))}
                 </ul>
                 <div className="pt-2 flex items-center gap-2 text-xs text-white/50">
-                  <MapPin className="w-3.5 h-3.5" /> Lake Country, BC · Limited dates
+                  <MapPin className="w-3.5 h-3.5" /> O&apos;Rourke Winery · Lake Country, BC
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Stats strip */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -240,10 +219,10 @@ export default function GraceNetworkHome() {
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
           >
             {[
-              { k: "4+", v: "Live products shipped" },
-              { k: "24/7", v: "Systems that keep working" },
-              { k: "1 day", v: "Full transfer, not a course" },
-              { k: "$15k", v: "Pays for itself in founder time" },
+              { k: "Private", v: "Fit-checked seats only" },
+              { k: "In-person", v: "No hybrid, on purpose" },
+              { k: "Operator", v: "Live products + capital" },
+              { k: "$15k", v: "Filter, not a discount" },
             ].map((s) => (
               <div key={s.v} className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4">
                 <div className="text-2xl font-semibold text-[#C5A46E] tracking-tight">{s.k}</div>
@@ -254,18 +233,37 @@ export default function GraceNetworkHome() {
         </div>
       </section>
 
-      {/* WHO I AM / PORTFOLIO */}
+      {/* ANTI-COMMODITY */}
+      <motion.section className="section bg-white border-b border-[#EDE9E0]" {...fadeUp}>
+        <div className="kola-container max-w-3xl text-center">
+          <div className="text-[#C5A46E] text-sm tracking-[2px]">THE POINT</div>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mt-2">
+            This is not the room where people learn how to use Claude for a mailing list.
+          </h2>
+          <p className="mt-5 text-lg text-[#6B7280] leading-relaxed">
+            That content is everywhere. This room is for people who already know the basics and want
+            the layer that doesn&apos;t get published — systems analysis, protection, agent install,
+            optimization judgment, and the operating patterns behind serious days.
+          </p>
+          <p className="mt-4 text-sm text-[#6B7280] flex items-center justify-center gap-2">
+            <Lock className="w-4 h-4 text-[#C5A46E]" />
+            We teaser the outcomes. We do not hand you a Googleable recipe.
+          </p>
+        </div>
+      </motion.section>
+
+      {/* WHO */}
       <motion.section id="proof" className="section" {...fadeUp}>
         <div className="kola-container">
           <div className="max-w-2xl mb-10">
-            <div className="text-[#C5A46E] text-sm tracking-[2px]">WHO YOU&apos;RE HIRING FOR THE DAY</div>
+            <div className="text-[#C5A46E] text-sm tracking-[2px]">WHO BUILDS THE ROOM</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mt-2">
-              Emily Grace — builder-operator, not a course creator
+              Emily Grace — shipping, trading, parenting, building
             </h2>
             <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
-              I don&apos;t teach AI from slides I found on LinkedIn. I run a portfolio of real products
-              in health, education, family, and capital systems — and I use the same autonomous
-              workflows I&apos;ll put on your businesses.
+              Not a parked idea. Multiple live products (AUVIE, Medvo, and more), capital systems,
+              and a full life that only works because the systems do. You&apos;re hiring a day with
+              that operator — not a content brand performing “AI.”
             </p>
           </div>
 
@@ -274,22 +272,17 @@ export default function GraceNetworkHome() {
               <motion.a
                 key={p.name}
                 href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={p.href.startsWith("http") ? "_blank" : undefined}
+                rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.06 }}
                 className="card-premium p-7 group block"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-xs tracking-[2px] text-[#C5A46E]">{p.tag}</div>
-                    <div className="text-2xl font-semibold mt-1 group-hover:text-[#C5A46E] transition-colors">
-                      {p.name}
-                    </div>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-[#C5A46E] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="text-xs tracking-[2px] text-[#C5A46E]">{p.tag}</div>
+                <div className="text-2xl font-semibold mt-1 group-hover:text-[#C5A46E] transition-colors">
+                  {p.name}
                 </div>
                 <p className="mt-3 text-[#6B7280] leading-relaxed">{p.blurb}</p>
               </motion.a>
@@ -297,187 +290,68 @@ export default function GraceNetworkHome() {
           </div>
 
           <p className="mt-6 text-xs text-[#6B7280] max-w-3xl">
-            Historical operating examples from my businesses. Not financial advice. Results are not
-            typical or guaranteed — the transfer is the system and the method, not a promise of returns.
+            Historical operating examples. Not financial advice. Results are not typical or guaranteed.
+            Nothing on this site is an invitation to recreate trading or revenue outcomes.
           </p>
         </div>
       </motion.section>
 
-      {/* THE PROBLEM */}
-      <motion.section className="section bg-white border-y border-[#EDE9E0]" {...fadeUp}>
-        <div className="kola-container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="text-[#C5A46E] text-sm tracking-[2px]">THE REAL COST</div>
-              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mt-2">
-                Manual chaos is quietly expensive
-              </h2>
-              <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
-                Every week you spend scanning, deciding, chasing, and re-explaining is a week your
-                competitors are compounding with systems. The bill isn&apos;t just payroll — it&apos;s
-                founder attention, slow response, and opportunities that never make it to a decision.
-              </p>
-            </div>
-            <div className="grid gap-4">
-              {[
-                {
-                  icon: Clock,
-                  title: "Founder hours disappear",
-                  body: "Repetitive scanning and decisions that a rules + agent layer should own.",
-                },
-                {
-                  icon: Target,
-                  title: "Signals arrive late",
-                  body: "By the time a human notices, the window has narrowed or closed.",
-                },
-                {
-                  icon: Zap,
-                  title: "Nothing compounds",
-                  body: "Without review loops, last month's work doesn't make next month smarter.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-4 p-5 rounded-2xl border border-[#EDE9E0] bg-[#F8F7F4]">
-                  <div className="w-10 h-10 rounded-full bg-[#0A1628] text-[#C5A46E] flex items-center justify-center flex-none">
-                    <item.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">{item.title}</div>
-                    <p className="text-sm text-[#6B7280] mt-1">{item.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* DAY AGENDA */}
-      <motion.section id="day" className="section bg-[#F8F7F4]" {...fadeUp}>
+      {/* THE ROOM */}
+      <motion.section id="room" className="section bg-[#F8F7F4]" {...fadeUp}>
         <div className="kola-container">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="text-[#C5A46E] text-sm tracking-[2px]">THE DAY</div>
+            <div className="text-[#C5A46E] text-sm tracking-[2px]">INSIDE (TEASER)</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mt-2">
-              What $15,000 actually buys
+              What you come for — without the recipe
             </h2>
             <p className="mt-3 text-[#6B7280] text-lg">
-              Not a webinar. A full private implementation day at O&apos;Rourke Winery —
-              built around the businesses you walk in with.
+              Enough signal to know if this is your room. Not enough to reverse-engineer it from a browser tab.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-4">
-            {dayAgenda.map((block, i) => (
+          <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            {inTheRoom.map((item, i) => (
               <motion.div
-                key={block.time}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={item.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="card-premium p-6 md:p-7 flex gap-5 md:gap-8"
+                className="card-premium p-7"
               >
-                <div className="flex-none">
-                  <div className="text-[#C5A46E] font-mono text-sm tracking-wider">{block.time}</div>
-                  <div className="mt-2 w-px h-full min-h-[2rem] bg-[#EDE9E0] ml-4 hidden md:block" />
+                <div className="flex items-center gap-2 text-[#C5A46E] text-xs tracking-[2px] mb-3">
+                  <Lock className="w-3.5 h-3.5" /> IN THE ROOM
                 </div>
-                <div>
-                  <div className="text-xl font-semibold tracking-tight">{block.title}</div>
-                  <p className="mt-1.5 text-[#6B7280] leading-relaxed">{block.body}</p>
-                </div>
+                <div className="text-xl font-semibold tracking-tight">{item.title}</div>
+                <p className="mt-2 text-[#6B7280] leading-relaxed">{item.body}</p>
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-12">
-            <h3 className="text-center text-xl font-semibold mb-6">You leave with</h3>
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 max-w-3xl mx-auto">
-              {outcomes.map((item) => (
-                <div key={item} className="flex items-start gap-3 text-[15px]">
-                  <Check className="text-[#C5A46E] mt-1 flex-none w-4 h-4" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
+          <div className="mt-10 max-w-2xl mx-auto rounded-2xl border border-[#EDE9E0] bg-white p-7 text-center">
+            <Sparkles className="w-5 h-5 text-[#C5A46E] mx-auto" />
+            <p className="mt-3 text-lg font-semibold tracking-tight">
+              Six-figure days exist in the systems we open up.
+            </p>
+            <p className="mt-2 text-sm text-[#6B7280] leading-relaxed">
+              Historical examples from live operations — capital and product. Not a promise.
+              Not typical. Not something we outline step-by-step on a landing page.
+            </p>
           </div>
         </div>
       </motion.section>
 
-      {/* SYSTEMS PROOF */}
-      <motion.section className="section bg-white" {...fadeUp}>
-        <div className="kola-container">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="text-[#C5A46E] text-sm tracking-[2px]">THE SYSTEMS</div>
-              <h2 className="text-4xl font-semibold tracking-tight mt-2">
-                What already runs my businesses
-              </h2>
-              <p className="mt-4 text-[#6B7280] text-lg leading-relaxed">
-                The Accelerator is not a generic ChatGPT tutorial. It&apos;s the transfer of the
-                operating layers I use: scan → filter → alert → execute → review — so judgment
-                stays human and repetition leaves the room.
-              </p>
-              <div className="mt-8 space-y-4">
-                {[
-                  {
-                    title: "Autonomous scanning & signal detection",
-                    desc: "24/7 monitoring that surfaces high-leverage opportunities before manual review catches up.",
-                  },
-                  {
-                    title: "Rule-based execution engines",
-                    desc: "Emotion-free decisions and actions executed inside checklists and workflows.",
-                  },
-                  {
-                    title: "Self-improving review loops",
-                    desc: "Structured journaling and optimization so the system gets sharper every cycle.",
-                  },
-                  {
-                    title: "Compounding infrastructure",
-                    desc: "Architecture that scales across verticals without linear headcount.",
-                  },
-                ].map((s) => (
-                  <div key={s.title} className="border-l-2 border-[#C5A46E] pl-4">
-                    <div className="font-semibold">{s.title}</div>
-                    <p className="text-sm text-[#6B7280] mt-1">{s.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="overflow-hidden rounded-2xl border border-[#EDE9E0]">
-                <img
-                  src="/proof/linkedin-proof-system.png"
-                  alt="Autonomous signal system from Emily's businesses"
-                  className="w-full"
-                />
-              </div>
-              <div className="overflow-hidden rounded-2xl border border-[#EDE9E0]">
-                <img
-                  src="/proof/web-hero-automation-proof.png"
-                  alt="Web automation and execution systems in production"
-                  className="w-full"
-                />
-              </div>
-              <p className="text-xs text-[#6B7280]">
-                Historical examples only. Not financial advice. Results are not typical or guaranteed.
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* WHY $15K */}
+      {/* WHY 15K */}
       <motion.section id="why-15k" className="section bg-[#0A1628] text-white" {...fadeUp}>
         <div className="kola-container">
           <div className="max-w-2xl mb-10">
             <div className="text-[#C5A46E] text-sm tracking-[2px]">WHY $15,000</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mt-2">
-              You&apos;re not buying a day of talking.
-              <br />
-              You&apos;re buying compressed years of operator pattern recognition.
+              Honestly? It might still be underpriced.
             </h2>
             <p className="mt-4 text-white/70 text-lg leading-relaxed">
-              The price is intentional. It filters for people ready to implement, and it reflects
-              what it costs to sit with someone who already shipped the hard parts — product,
-              systems, and the judgment of what not to automate.
+              The number is a filter. It keeps the room full of people who already have the basics
+              and want to be around other smart operators — not tourists collecting free tactics.
             </p>
           </div>
 
@@ -494,7 +368,9 @@ export default function GraceNetworkHome() {
                 <div className="text-sm text-white/60">{row.label}</div>
                 <div
                   className={`text-3xl font-semibold tracking-tight mt-2 ${
-                    row.value === "$15,000" ? "text-[#C5A46E]" : "text-white"
+                    row.value === "$15,000" || row.value.startsWith("6")
+                      ? "text-[#C5A46E]"
+                      : "text-white"
                   }`}
                 >
                   {row.value}
@@ -507,19 +383,19 @@ export default function GraceNetworkHome() {
           <div className="mt-10 grid md:grid-cols-3 gap-5">
             {[
               {
-                icon: Sparkles,
-                title: "Operator, not influencer",
-                body: "Multiple live products. Real constraints. Systems that survive contact with customers and capital.",
-              },
-              {
                 icon: Users,
-                title: "Private access",
-                body: "Small / private format. Direct guidance. No diluted group content built for a thousand seats.",
+                title: "Peer caliber",
+                body: "You came for the systems — and for the other people in the room who already operate at a high level.",
               },
               {
                 icon: Shield,
+                title: "Protected method",
+                body: "What we show is not re-published as a downloadable course. Access is the product.",
+              },
+              {
+                icon: Lock,
                 title: "Fit-checked first",
-                body: "15-minute consult is included. If it's not the right day for either of us, we don't force it.",
+                body: "15-minute consult included. If it is not mutual, we do not force a seat.",
               },
             ].map((c) => (
               <div key={c.title} className="rounded-2xl border border-white/10 p-6">
@@ -536,12 +412,12 @@ export default function GraceNetworkHome() {
       <motion.section className="section" {...fadeUp}>
         <div className="kola-container">
           <div className="text-center mb-10">
-            <div className="text-[#C5A46E] text-sm tracking-[2px]">FIT</div>
-            <h2 className="text-4xl font-semibold tracking-tight mt-2">Who this day is for</h2>
+            <div className="text-[#C5A46E] text-sm tracking-[2px]">THE FILTER</div>
+            <h2 className="text-4xl font-semibold tracking-tight mt-2">Who this room is for</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="card-premium p-8">
-              <div className="text-sm font-semibold tracking-wide text-emerald-700 mb-4">YES — if this is you</div>
+              <div className="text-sm font-semibold tracking-wide text-emerald-700 mb-4">YES</div>
               <ul className="space-y-3">
                 {forWho.map((item) => (
                   <li key={item} className="flex gap-3 text-[15px]">
@@ -552,9 +428,9 @@ export default function GraceNetworkHome() {
               </ul>
             </div>
             <div className="card-premium p-8">
-              <div className="text-sm font-semibold tracking-wide text-red-700/80 mb-4">NO — not a fit</div>
+              <div className="text-sm font-semibold tracking-wide text-red-700/80 mb-4">NOT THIS ROOM</div>
               <ul className="space-y-3">
-                {notFor.map((item) => (
+                {notInTheRoom.map((item) => (
                   <li key={item} className="flex gap-3 text-[15px]">
                     <X className="w-4 h-4 text-red-500/80 mt-1 flex-none" />
                     <span>{item}</span>
@@ -566,59 +442,29 @@ export default function GraceNetworkHome() {
         </div>
       </motion.section>
 
-      {/* VENUE */}
+      {/* VENUE — short */}
       <motion.section className="section bg-white border-y border-[#EDE9E0]" {...fadeUp}>
-        <div className="kola-container">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="text-[#C5A46E] text-sm tracking-[2px]">THE VENUE</div>
-              <h2 className="text-4xl font-semibold tracking-tight mt-2">
-                O&apos;Rourke Winery, Lake Country
-              </h2>
-              <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
-                A private winery setting overlooking Okanagan Lake. Dramatic landscape, zero hybrid
-                Zoom fatigue — room to think and build. In-person only, on purpose.
-              </p>
-              <ul className="mt-6 space-y-2 text-[15px]">
-                {[
-                  "Private room, full-day focus",
-                  "Lake Country, BC — easy from Kelowna",
-                  "Designed for deep work, not a hotel ballroom",
-                ].map((t) => (
-                  <li key={t} className="flex gap-2 items-center">
-                    <Check className="w-4 h-4 text-[#C5A46E]" /> {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div whileHover={{ scale: 1.02 }} className="overflow-hidden rounded-2xl border col-span-2">
-                <img
-                  src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1200&q=80"
-                  alt="Vineyard and lake setting in the Okanagan"
-                  className="w-full h-[280px] object-cover"
-                />
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} className="overflow-hidden rounded-2xl border">
-                <img
-                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80"
-                  alt="Wine glasses at a refined table setting"
-                  className="w-full h-[180px] object-cover"
-                />
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} className="overflow-hidden rounded-2xl border">
-                <img
-                  src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=80"
-                  alt="Vineyard rows in golden light"
-                  className="w-full h-[180px] object-cover"
-                />
-              </motion.div>
-            </div>
+        <div className="kola-container grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <div className="text-[#C5A46E] text-sm tracking-[2px]">WHERE</div>
+            <h2 className="text-4xl font-semibold tracking-tight mt-2">
+              O&apos;Rourke Winery, Lake Country
+            </h2>
+            <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
+              Private. In-person only. No hybrid Zoom version — the room is the product.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border">
+            <img
+              src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1200&q=80"
+              alt="Okanagan vineyard setting"
+              className="w-full h-[280px] object-cover"
+            />
           </div>
         </div>
       </motion.section>
 
-      {/* FAQ */}
+      {/* FAQ — tight, no methods */}
       <motion.section className="section bg-[#F8F7F4]" {...fadeUp}>
         <div className="kola-container max-w-3xl">
           <div className="text-center mb-10">
@@ -628,24 +474,24 @@ export default function GraceNetworkHome() {
           <div className="space-y-4">
             {[
               {
+                q: "Will you publish the curriculum online?",
+                a: "No. The site is a teaser on purpose. If you can reverse-engineer the day from a landing page, it is not worth $15k.",
+              },
+              {
                 q: "Is this a trading course?",
-                a: "No. Trading systems are one proof surface of how I build autonomous workflows. The day is about installing scan → filter → alert → execute → review systems on the businesses you actually run.",
+                a: "No. Capital systems may appear as historical operator examples. The room is about systems, protection, agents, and multi-business leverage — not tips or guaranteed returns.",
               },
               {
-                q: "Why is it $15,000 and not cheaper?",
-                a: "Because the scarce resource is private operator time with someone who already ships. A lower price attracts collectors of content. This price attracts people ready to implement and protects the quality of the day.",
-              },
-              {
-                q: "What if I'm not sure I'm a fit?",
-                a: "That's what the 15-minute consult is for — included in the path. We both get a clear yes or no before anyone commits a full day.",
+                q: "Why $15,000?",
+                a: "To keep the room full of people who already have the basics and want peer-level operators — not the cheapest AI workshop on the internet.",
               },
               {
                 q: "Is there a remote option?",
-                a: "No. In-person only at O'Rourke Winery. The environment is part of the product.",
+                a: "No. In-person only at O'Rourke Winery.",
               },
               {
-                q: "Do I get materials after?",
-                a: "Yes — roadmap, system maps, and the automation starters we build. The point is that the systems keep working after you leave the winery.",
+                q: "What is the next step?",
+                a: "A short fit consult. Mutual yes only. Then you lock the day.",
               },
             ].map((faq) => (
               <div key={faq.q} className="card-premium p-6">
@@ -662,28 +508,27 @@ export default function GraceNetworkHome() {
         <div className="kola-container text-center max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-1.5 text-xs tracking-[2px] text-[#C5A46E] mb-6">
             <span className="live-dot" />
-            NEXT STEP · 15 MINUTES
+            FIT CONSULT · 15 MINUTES
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Ready to stop paying for chaos?
+            If this is your room, you already feel it.
           </h2>
           <p className="mt-4 text-white/70 text-lg">
-            Book the fit consult. If we&apos;re aligned, you lock a private day at O&apos;Rourke —
-            $15,000 CAD, paid upfront, systems that keep working after.
+            Request the fit consult. We both decide. $15,000 CAD · private day · method stays offline.
           </p>
           <div className="mt-10">
             <a href={CONSULT_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="gold-btn h-14 px-10 text-base rounded-full">
-                Book the 15-min consult <ArrowRight className="w-4 h-4 ml-2" />
+                Request a fit consult <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
             <p className="mt-4 text-xs text-white/45">
-              $15,000 CAD · O&apos;Rourke Winery · In-person only · Limited dates
+              O&apos;Rourke Winery · Lake Country, BC · In-person only · Limited seats
             </p>
           </div>
           <p className="mt-8 text-[11px] text-white/35 max-w-lg mx-auto">
             Historical examples only. Not financial advice. The Grace Network does not provide
-            broker services or guarantee investment outcomes. Results are not typical.
+            broker services or guarantee investment or revenue outcomes. Results are not typical.
           </p>
         </div>
       </section>
