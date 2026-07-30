@@ -57,7 +57,9 @@ export default function GraceNetworkHome() {
         <div className="kola-container proof-grid">
           <div><strong>Multiple</strong><span>six-figure businesses</span></div>
           <div><strong>Solo</strong><span>no team behind the curtain</span></div>
-          <div><strong>Charity</strong><span>alongside the companies</span></div>
+          <a href="https://www.thekolafund.org/" target="_blank" rel="noreferrer">
+            <strong>The Kola Fund</strong><span>charity alongside the companies ↗</span>
+          </a>
           <div><strong>Parent</strong><span>the systems have to work</span></div>
         </div>
       </section>
