@@ -1,18 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ArrowRight, Check, MapPin, X } from "lucide-react";
+import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import wineryImage from "@/public/grace-winery.jpg";
 
 const CONSULT_URL = "https://calendar.gohighlevel.com/thegracenetworkai-private";
-
-const reveal = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-};
 
 const businesses = [
   { name: "AUVIE", note: "Education", href: "https://www.auvie.app" },
@@ -27,32 +19,26 @@ export default function GraceNetworkHome() {
       <Navbar />
 
       <section className="hero">
-        <div className="hero-photo" aria-hidden="true" />
+        <div className="hero-photo" aria-hidden="true">
+          <Image
+            src={wineryImage}
+            alt=""
+            fill
+            preload
+            sizes="100vw"
+          />
+        </div>
         <div className="hero-wash" aria-hidden="true" />
         <div className="kola-container hero-inner">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="eyebrow light"
-          >
+          <div className="eyebrow light hero-reveal hero-reveal-1">
             Everyone signs an NDA · O&apos;Rourke Winery · Lake Country
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.08 }}
-          >
+          </div>
+          <h1 className="hero-reveal hero-reveal-2">
             How to run more
             <br />
             <em>without life running you.</em>
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.16 }}
-            className="hero-bottom"
-          >
+          </h1>
+          <div className="hero-bottom hero-reveal hero-reveal-3">
             <p>
               One working day with Emily Grace—the solo operator behind multiple
               six-figure businesses, a charity, and a very full real life.
@@ -63,7 +49,7 @@ export default function GraceNetworkHome() {
               </a>
               <span>$15,000 CAD · In person only</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -76,7 +62,7 @@ export default function GraceNetworkHome() {
         </div>
       </section>
 
-      <motion.section className="editorial-section" {...reveal}>
+      <section className="editorial-section optimized-section">
         <div className="kola-container editorial-grid">
           <div className="eyebrow">Why Emily</div>
           <div>
@@ -105,11 +91,11 @@ export default function GraceNetworkHome() {
             </a>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       <section id="day" className="day-section">
         <div className="kola-container">
-          <motion.div className="day-heading" {...reveal}>
+          <div className="day-heading">
             <div>
               <div className="eyebrow light">The day</div>
               <h2>Bring the thing that&apos;s<br />too real for a course.</h2>
@@ -119,7 +105,7 @@ export default function GraceNetworkHome() {
               and what would give you your time back. The agenda follows the room,
               not a canned curriculum.
             </p>
-          </motion.div>
+          </div>
 
           <div className="day-cards">
             {[
@@ -127,11 +113,11 @@ export default function GraceNetworkHome() {
               ["02", "The judgment layer", "What to automate, what to protect, and what still needs you."],
               ["03", "The room", "A small, fit-checked group of people with something real on the line."],
             ].map(([number, title, text]) => (
-              <motion.article key={number} {...reveal}>
+              <article key={number}>
                 <span>{number}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </motion.article>
+              </article>
             ))}
           </div>
 
@@ -142,7 +128,7 @@ export default function GraceNetworkHome() {
         </div>
       </section>
 
-      <motion.section id="why" className="price-section" {...reveal}>
+      <section id="why" className="price-section optimized-section">
         <div className="kola-container price-grid">
           <div>
             <div className="eyebrow">The price</div>
@@ -162,7 +148,7 @@ export default function GraceNetworkHome() {
             </blockquote>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       <section className="fit-section">
         <div className="kola-container fit-grid">
@@ -192,7 +178,14 @@ export default function GraceNetworkHome() {
       </section>
 
       <section className="venue">
-        <div className="venue-image" aria-hidden="true" />
+        <div className="venue-image" aria-hidden="true">
+          <Image
+            src={wineryImage}
+            alt=""
+            fill
+            sizes="100vw"
+          />
+        </div>
         <div className="venue-card">
           <MapPin size={19} />
           <div className="eyebrow light">Lake Country, British Columbia</div>

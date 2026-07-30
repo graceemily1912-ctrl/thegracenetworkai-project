@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import { Toaster } from "@/components/ui/sonner";
-import { SmoothScroll } from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://thegracenetwork.ai"),
@@ -30,7 +29,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#F8F7F4] text-[#0A1628]">
         <ConvexClientProvider>
-          <SmoothScroll />
           {children}
         </ConvexClientProvider>
         <Toaster position="top-center" richColors closeButton />

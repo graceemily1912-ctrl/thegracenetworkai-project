@@ -241,7 +241,8 @@ body { background: #f3efe6; }
 .nav-links { display: flex; align-items: center; gap: 32px; font-size: 13px; }
 .nav-cta { border-bottom: 1px solid #d8b46e; display: flex; align-items: center; gap: 5px; padding-block: 6px; }
 .hero { min-height: 760px; position: relative; color: white; display: flex; align-items: flex-end; overflow: hidden; background: #122033; }
-.hero-photo, .venue-image { position: absolute; inset: 0; background: url("https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1800&q=88") center 54%/cover no-repeat; }
+.hero-photo, .venue-image { position: absolute; inset: 0; overflow: hidden; }
+.hero-photo img, .venue-image img { object-fit: cover; object-position: center 54%; }
 .hero-wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,19,32,.9) 0%, rgba(7,19,32,.68) 48%, rgba(7,19,32,.15) 100%), linear-gradient(0deg, rgba(7,19,32,.72), transparent 55%); }
 .hero-inner { width: 100%; position: relative; padding-bottom: 72px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .19em; font-size: 11px; font-weight: 650; color: #8b6c38; }
@@ -316,6 +317,20 @@ body { background: #f3efe6; }
 .site-footer strong { color: white; font-family: Georgia, serif; font-size: 19px; font-weight: 400; }
 .site-footer p { margin-top: 6px; }
 .site-footer a:hover { color: #d9b873; }
+.optimized-section { content-visibility: auto; contain-intrinsic-size: 900px; }
+.day-section, .fit-section, .venue, .closing, .site-footer { content-visibility: auto; contain-intrinsic-size: 800px; }
+.hero-reveal { animation: hero-in .65s cubic-bezier(.22,1,.36,1) both; }
+.hero-reveal-2 { animation-delay: 70ms; }
+.hero-reveal-3 { animation-delay: 140ms; }
+@keyframes hero-in {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-reveal { animation: none; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
 
 @media (max-width: 800px) {
   .kola-container { padding-inline: 20px; }
