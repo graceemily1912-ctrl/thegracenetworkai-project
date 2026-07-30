@@ -1,26 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import Lenis from 'lenis';
-
+/**
+ * Lenis was making scroll feel laggy / "heavy."
+ * Native scroll is intentional. Component kept so imports don't break.
+ */
 export function SmoothScroll() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.0010005 * Math.pow(2, 10 * (t - 1))),
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   return null;
 }
