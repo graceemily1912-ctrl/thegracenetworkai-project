@@ -780,3 +780,278 @@ body {
     padding-block: 105px 64px;
   }
 }
+
+/* Condensed homepage — one continuous explainer, one closing invitation */
+.story-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(105px, 12vw, 170px) 0 clamp(115px, 13vw, 185px);
+  background:
+    radial-gradient(ellipse at 92% 4%, rgba(189,151,91,.15), transparent 30%),
+    radial-gradient(ellipse at 5% 82%, rgba(127,39,52,.075), transparent 26%),
+    linear-gradient(145deg, #f6f1e8 0%, #eee7db 52%, #f5f0e7 100%);
+}
+.story-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image: linear-gradient(rgba(16,32,54,.04) 1px, transparent 1px);
+  background-size: 100% 112px;
+  mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+}
+.story-section .kola-container {
+  position: relative;
+}
+.story-opening {
+  display: grid;
+  grid-template-columns: minmax(130px, .7fr) 3.3fr;
+  gap: clamp(42px, 8vw, 128px);
+}
+.story-opening h2 {
+  max-width: 910px;
+  font-family: "Iowan Old Style", Baskerville, "Times New Roman", serif;
+  font-size: clamp(52px, 6.4vw, 88px);
+  line-height: .94;
+  letter-spacing: -.052em;
+  font-weight: 400;
+  text-wrap: balance;
+}
+.story-opening p {
+  max-width: 720px;
+  margin-top: 30px;
+  color: #4d5257;
+  font-size: 18px;
+  line-height: 1.72;
+}
+.story-opening p + p {
+  margin-top: 16px;
+}
+.story-proof {
+  display: grid;
+  grid-template-columns: .9fr 2.1fr;
+  gap: clamp(70px, 12vw, 170px);
+  margin-top: clamp(90px, 11vw, 145px);
+  padding: 40px 0 42px;
+  border-block: 1px solid rgba(16,32,54,.18);
+}
+.proof-intro span,
+.proof-links a span,
+.proof-trading span {
+  display: block;
+  color: #8b6c38;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.proof-intro strong {
+  display: block;
+  max-width: 330px;
+  margin-top: 12px;
+  font-family: "Iowan Old Style", Baskerville, serif;
+  font-size: 29px;
+  line-height: 1.15;
+  font-weight: 400;
+}
+.proof-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 48px;
+}
+.proof-links a,
+.proof-trading {
+  position: relative;
+  min-height: 58px;
+}
+.proof-links a {
+  transition: color .2s ease, transform .2s ease;
+}
+.proof-links a:hover {
+  color: #7f2734;
+  transform: translateX(4px);
+}
+.proof-links strong,
+.proof-trading strong {
+  display: block;
+  margin-top: 7px;
+  font-family: "Iowan Old Style", Baskerville, serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+.proof-links svg {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+}
+.story-close {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: clamp(75px, 12vw, 170px);
+  align-items: start;
+  margin-top: clamp(95px, 12vw, 160px);
+}
+.story-close h3 {
+  max-width: 680px;
+  margin-top: 18px;
+  font-family: "Iowan Old Style", Baskerville, serif;
+  font-size: clamp(39px, 4.8vw, 66px);
+  line-height: 1;
+  letter-spacing: -.042em;
+  font-weight: 400;
+}
+.story-details > p {
+  color: #55595c;
+  font-size: 16px;
+  line-height: 1.68;
+}
+.single-price {
+  margin: 36px 0 32px;
+  padding: 28px 0;
+  border-block: 1px solid rgba(16,32,54,.2);
+}
+.single-price strong {
+  display: block;
+  color: #7f2734;
+  font-family: "Iowan Old Style", Baskerville, serif;
+  font-size: 43px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+.single-price span {
+  display: block;
+  margin-top: 9px;
+  color: #6b6b67;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.venue-final {
+  position: relative;
+  min-height: min(760px, 88svh);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: white;
+  background: #102036;
+}
+.venue-final .venue-image {
+  position: absolute;
+  inset: 0;
+}
+.venue-final .venue-image img {
+  object-fit: cover;
+  object-position: center 44%;
+  filter: saturate(.8) contrast(.96);
+}
+.venue-final-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7,19,32,.82), rgba(7,19,32,.36) 57%, rgba(7,19,32,.1)),
+    linear-gradient(0deg, rgba(7,19,32,.72), transparent 62%);
+}
+.venue-final-copy {
+  position: relative;
+  width: 100%;
+  padding-bottom: 64px;
+}
+.venue-final-copy h2 {
+  max-width: 760px;
+  margin-top: 18px;
+  font-family: "Iowan Old Style", Baskerville, serif;
+  font-size: clamp(58px, 7.2vw, 96px);
+  line-height: .92;
+  letter-spacing: -.055em;
+  font-weight: 400;
+}
+.venue-final-copy > p:not(.fine-print) {
+  max-width: 540px;
+  margin-top: 24px;
+  color: rgba(255,255,255,.74);
+  font-size: 18px;
+}
+.venue-final-copy .primary-link {
+  margin-top: 34px;
+  color: #f1d598;
+}
+.venue-final-copy .fine-print {
+  max-width: 670px;
+  margin: 58px 0 0;
+  color: rgba(255,255,255,.4);
+}
+
+@media (max-width: 800px) {
+  .hero-bottom {
+    display: block;
+  }
+  .hero-bottom .primary-link {
+    margin-top: 28px;
+  }
+  .story-section {
+    padding-block: 90px 105px;
+  }
+  .story-opening,
+  .story-proof,
+  .story-close {
+    display: block;
+  }
+  .story-opening h2 {
+    margin-top: 18px;
+    font-size: clamp(44px, 13vw, 58px);
+  }
+  .story-opening p {
+    font-size: 16px;
+  }
+  .story-proof {
+    margin-top: 74px;
+    padding-block: 32px 36px;
+  }
+  .proof-intro strong {
+    font-size: 25px;
+  }
+  .proof-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 24px;
+    margin-top: 42px;
+  }
+  .proof-links strong,
+  .proof-trading strong {
+    padding-right: 18px;
+    font-size: 18px;
+  }
+  .story-close {
+    margin-top: 82px;
+  }
+  .story-close h3 {
+    font-size: 42px;
+  }
+  .story-details {
+    margin-top: 42px;
+  }
+  .single-price strong {
+    font-size: 39px;
+  }
+  .venue-final {
+    min-height: 680px;
+  }
+  .venue-final-wash {
+    background:
+      linear-gradient(0deg, rgba(7,19,32,.91), rgba(7,19,32,.16) 82%),
+      linear-gradient(90deg, rgba(7,19,32,.45), transparent);
+  }
+  .venue-final-copy {
+    padding-bottom: 42px;
+  }
+  .venue-final-copy h2 {
+    font-size: 53px;
+  }
+  .venue-final-copy > p:not(.fine-print) {
+    font-size: 16px;
+  }
+  .venue-final-copy .fine-print {
+    margin-top: 48px;
+  }
+}
