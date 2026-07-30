@@ -7,7 +7,8 @@ import wineryImage from "@/public/grace-winery.jpg";
 const CONSULT_URL = "https://calendar.gohighlevel.com/thegracenetworkai-private";
 
 const businesses = [
-  { name: "AUVIE", note: "Education", href: "https://www.auvie.app" },
+  { name: "AUVIE", note: "District education", href: "https://www.auvie.app" },
+  { name: "KOLA Academy", note: "Nature-based learning", href: "https://www.learnwithkola.ca/" },
   { name: "Medvo", note: "Health", href: "https://www.medvo.io" },
   { name: "FamilyTerms", note: "Family", href: "https://www.familyterms.com" },
   { name: "Capital systems", note: "Private", href: "#day" },
