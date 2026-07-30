@@ -17,14 +17,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://thegracenetwork.ai"),
-  title: "The Grace Network | Private day with Emily Grace — $15,000",
+  title: "The Grace Network | Private AI Accelerator — $15,000",
   description:
-    "I run multiple six-figure businesses solo — plus a charity and parenting solo. One private day, $15,000 CAD, O'Rourke Winery.",
+    "A private, fit-checked room for operators past the basics. Live products. Capital systems. Method stays offline. $15,000 CAD · O'Rourke Winery.",
   icons: { icon: "/favicon.ico" },
   openGraph: {
-    title: "The Grace Network — $15,000 private day",
+    title: "The Grace Network — Private AI Accelerator",
     description:
-      "Multiple six-figure businesses. Solo. One day at O'Rourke Winery for people past the basics.",
+      "Not another AI course. A room you can't Google. $15,000 CAD · in-person only · Lake Country BC.",
     images: [{ url: "/og.png" }],
   },
 };

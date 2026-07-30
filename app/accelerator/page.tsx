@@ -69,55 +69,82 @@ export default function AcceleratorPage() {
 
       <div className="kola-container pt-14 pb-20">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#C5A46E] text-sm font-medium">In person · Lake Country, BC</p>
-          <h1 className="text-4xl md:text-5xl tracking-tight font-semibold mt-2">The day</h1>
-          <p className="text-xl text-[#6B7280] mt-3 max-w-2xl">
-            $15,000 CAD. Private day with me at O&apos;Rourke. I run multiple six-figure businesses
-            solo — plus a charity and parenting solo. That&apos;s what you&apos;re buying time with.
+          <div className="uppercase text-[#C5A46E] text-xs tracking-[3px]">IN-PERSON · LAKE COUNTRY</div>
+          <h1 className="text-6xl tracking-[-2px] font-semibold mt-2">The AI Accelerator</h1>
+          <p className="text-2xl text-[#6B7280] mt-2">
+            $15,000 CAD — paid upfront. Includes 15-min fit consult.
+          </p>
+          <p className="mt-3 text-[#6B7280] max-w-2xl">
+            A private room with Emily Grace at O&apos;Rourke Winery — for people past the basics.
+            Live products. Capital systems. Agent infrastructure. The playbook is not published online.
           </p>
 
           <div className="mt-8 grid md:grid-cols-5 gap-6">
-            <div className="md:col-span-3 card-premium p-8 space-y-4 text-[15px]">
-              <p className="text-[#3D4A5C] leading-relaxed">
-                For people past the basics. You see how I actually run the stack across products
-                and capital. How stays in the room — not on a public page.
-              </p>
-              <ul className="space-y-2 text-[#3D4A5C]">
-                <li>→ Multiple live businesses, run solo</li>
-                <li>→ Real systems, historical examples only</li>
-                <li>→ Small room, people at your level</li>
-                <li>→ No public curriculum</li>
+            <div className="md:col-span-3 card-premium p-9 space-y-6 text-[15px]">
+              <div className="uppercase tracking-widest text-xs text-[#C5A46E]">TEASER ONLY</div>
+              <ul className="space-y-3 text-lg">
+                <li>• Systems that already print — protection, analysis, install, optimize</li>
+                <li>• Multi-business operator patterns (products + capital + life)</li>
+                <li>• A room of peers who already get the basics</li>
+                <li>• Method stays offline — nothing Googleable on purpose</li>
               </ul>
-              <p className="pt-3 text-sm border-t text-[#6B7280]">
-                Not financial advice. Results not typical or guaranteed.
-              </p>
+              <div className="pt-4 text-sm border-t text-[#6B7280]">
+                Historical examples only. Not financial advice. Not a step-by-step public curriculum.
+              </div>
             </div>
 
-            <div className="md:col-span-2 card-premium p-8 bg-[#0A1628] text-white">
-              <div className="text-4xl font-semibold tracking-tight">$15,000</div>
-              <div className="text-white/60 mt-1 text-sm">CAD · one day</div>
-              <p className="my-6 text-sm text-white/75">
-                O&apos;Rourke Winery.
+            <div className="md:col-span-2 card-premium p-9 bg-[#0A1628] text-white">
+              <div className="text-5xl font-semibold tracking-tighter">$15,000</div>
+              <div className="text-white/70 mt-1">CAD · One-time</div>
+
+              <div className="my-8 text-sm space-y-2 text-white/80">
+                Private or small group.
                 <br />
-                Paid upfront. In-person only.
-              </p>
+                Limited dates at O&apos;Rourke Winery.
+              </div>
+
+              <div className="text-xs tracking-widest uppercase">In-person only · Paid upfront</div>
               <a
                 href="https://calendar.gohighlevel.com/thegracenetworkai-private"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-sm text-[#C5A46E] hover:underline"
+                className="mt-6 inline-block text-sm text-[#C5A46E] hover:underline"
               >
-                Book the fit call →
+                Book 15-min fit consult →
               </a>
             </div>
           </div>
 
-          <div className="mt-8 text-sm text-[#6B7280]">
-            More on the{" "}
-            <Link href="/#why" className="text-[#0A1628] underline underline-offset-2">
-              homepage
-            </Link>
-            .
+          <div className="mt-6 text-center">
+            <p className="text-sm text-[#6B7280]">
+              Systems from my own businesses — running autonomously. Historical examples only.
+            </p>
+            <div className="mt-3 flex justify-center gap-4">
+              <img src="/proof/linkedin-proof-system.png" alt="Autonomous signal system" className="h-20 rounded border" />
+              <img src="/proof/web-hero-automation-proof.png" alt="Automation in production" className="h-20 rounded border" />
+            </div>
+          </div>
+
+          <div className="mt-10 card-premium p-9">
+            <div className="uppercase tracking-widest text-xs text-[#C5A46E] mb-2">WHY $15,000</div>
+            <h3 className="text-2xl font-semibold tracking-tight">
+              The price is a filter. The room is the product.
+            </h3>
+            <div className="mt-6 grid md:grid-cols-2 gap-6 text-[15px]">
+              <ul className="space-y-3">
+                <li>• Keeps tourists and free-tactic hunters out</li>
+                <li>• Fills seats with people who already have the basics</li>
+                <li>• Private access to a multi-business operator</li>
+                <li>• Method is not re-sold as a downloadable course</li>
+              </ul>
+              <div className="text-[#6B7280]">
+                Full teaser and value case on the{" "}
+                <Link href="/#why-15k" className="text-[#0A1628] underline underline-offset-2">
+                  homepage
+                </Link>
+                . Fit consult first — mutual yes only.
+              </div>
+            </div>
           </div>
 
           {/* GATE CHECK */}
