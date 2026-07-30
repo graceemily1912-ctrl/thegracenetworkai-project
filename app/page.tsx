@@ -11,7 +11,7 @@ const businesses = [
   { name: "KOLA Academy", note: "Nature-based learning", href: "https://www.learnwithkola.ca/" },
   { name: "Medvo", note: "Health", href: "https://www.medvo.io" },
   { name: "FamilyTerms", note: "Family", href: "https://www.familyterms.com" },
-  { name: "Capital systems", note: "Private", href: "#day" },
+  { name: "Trading systems", note: "Live capital · historical", href: "#day" },
 ];
 
 export default function GraceNetworkHome() {
