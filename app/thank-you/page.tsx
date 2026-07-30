@@ -27,9 +27,9 @@ function ThankYouContent() {
   return (
     <div className="kola-container py-16">
       <Card className="card-premium max-w-2xl mx-auto p-10 text-center">
-        <div className="text-6xl mb-4">🎉</div>
+        <div className="receipt-mark">G</div>
         <h1 className="text-4xl font-semibold tracking-tight">Thank you</h1>
-        <p className="text-[#6B7280] mt-2">Your {type === "workshop" ? "Workshop" : "Accelerator"} application has been received.</p>
+        <p className="text-[#6B7280] mt-2">Your {type === "workshop" ? "fit" : "private-day"} application has been received.</p>
 
         {email && (
           <div className="mt-6 text-sm inline-block bg-[#F8F7F4] px-4 py-2 rounded-full border">
@@ -39,7 +39,7 @@ function ThankYouContent() {
 
         {/* Realtime status */}
         <div className="mt-9 border rounded-2xl p-6 text-left bg-white">
-          <div className="uppercase text-xs tracking-widest text-[#C5A46E] mb-1">LIVE STATUS</div>
+          <div className="uppercase text-xs tracking-widest text-[#C5A46E] mb-1">YOUR STATUS</div>
           <div className="text-xl font-medium capitalize flex items-center gap-2">
             {statusText}
             <span className="live-dot" />
@@ -47,23 +47,23 @@ function ThankYouContent() {
 
           {type === "workshop" && (
             <>
-              <div className="text-sm mt-4">Workshop qualification: {userStatus?.workshopAttended ? "CONFIRMED ✓" : "Pending payment & attendance"}</div>
-              <p className="text-xs mt-3 text-[#6B7280]">Once you pay and attend, you unlock Accelerator eligibility instantly.</p>
+              <div className="text-sm mt-4">Fit status: {userStatus?.workshopAttended ? "CONFIRMED ✓" : "Pending fit confirmation"}</div>
+              <p className="text-xs mt-3 text-[#6B7280]">Once the fit process is complete, you can reserve an available private day.</p>
             </>
           )}
 
           {type === "accelerator" && (
             <div className="mt-3">
-              <div>Accelerator status: <span className="font-semibold uppercase">{userStatus?.acceleratorStatus || "applied"}</span></div>
-              {isPaid && <div className="mt-1 text-emerald-600 font-medium">Payment confirmed. Welcome to the Accelerator.</div>}
+              <div>Private-day status: <span className="font-semibold uppercase">{userStatus?.acceleratorStatus || "applied"}</span></div>
+              {isPaid && <div className="mt-1 text-emerald-600 font-medium">Payment confirmed. Your private day is reserved.</div>}
             </div>
           )}
         </div>
 
         <div className="mt-8 flex flex-col gap-3 text-sm">
-          <Link href="/workshop" className="underline">Return to Workshop page</Link>
-          {userStatus?.workshopAttended && <Link href="/accelerator" className="underline">Go to Accelerator portal</Link>}
-          {userStatus?.acceleratorStatus === "paid" && <Link href="/alumni" className="text-[#C5A46E] font-medium">Access Alumni Portal →</Link>}
+          <Link href="/workshop" className="underline">Return to application</Link>
+          {userStatus?.workshopAttended && <Link href="/accelerator" className="underline">Go to private-day portal</Link>}
+          {userStatus?.acceleratorStatus === "paid" && <Link href="/alumni" className="text-[#C5A46E] font-medium">Your private materials →</Link>}
         </div>
       </Card>
     </div>

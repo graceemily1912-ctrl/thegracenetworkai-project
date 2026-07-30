@@ -17,7 +17,7 @@ const businesses = [
 export default function GraceNetworkHome() {
   return (
     <main>
-      <Navbar />
+      <Navbar overlay />
 
       <section className="hero">
         <div className="hero-photo" aria-hidden="true">
@@ -57,11 +57,11 @@ export default function GraceNetworkHome() {
       <section className="proof-ribbon" aria-label="Emily's operating proof">
         <div className="kola-container proof-grid">
           <div><strong>Multiple</strong><span>six-figure businesses</span></div>
-          <div><strong>Solo</strong><span>no team behind the curtain</span></div>
+          <div><strong>Solo</strong><span>operated by Emily</span></div>
           <a href="https://www.thekolafund.org/" target="_blank" rel="noreferrer">
             <strong>The Kola Fund</strong><span>charity alongside the companies ↗</span>
           </a>
-          <div><strong>Parent</strong><span>the systems have to work</span></div>
+          <div><strong>Parent</strong><span>a full real life</span></div>
         </div>
       </section>
 
@@ -69,25 +69,26 @@ export default function GraceNetworkHome() {
         <div className="kola-container editorial-grid">
           <div className="eyebrow">Why Emily</div>
           <div>
-            <h2>I don&apos;t teach this from a deck. I live inside it.</h2>
+            <h2>I built this in the middle of a full life.</h2>
             <p className="lead">
               AUVIE. Medvo. FamilyTerms. Trading systems. A charity. Kids.
-              None of it works because I have endless time. It works because I&apos;ve
-              built systems I can trust when I&apos;m offline, at school pickup, or
-              deep in another product.
+              None of it works because I have endless time. It works through
+              school-pickup weeks, while I&apos;m deep in another company, and when
+              I&apos;m completely offline.
             </p>
             <p className="signature">— Emily</p>
           </div>
         </div>
 
         <div className="kola-container business-row">
-          {businesses.map((business) => (
+          {businesses.map((business, index) => (
             <a
               key={business.name}
               href={business.href}
               target={business.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
             >
+              <small>0{index + 1}</small>
               <span>{business.note}</span>
               <strong>{business.name}</strong>
               <ArrowRight size={16} />
@@ -101,20 +102,19 @@ export default function GraceNetworkHome() {
           <div className="day-heading">
             <div>
               <div className="eyebrow light">The day</div>
-              <h2>Bring the thing that&apos;s<br />too real for a course.</h2>
+              <h2>Bring the decision<br />that won&apos;t leave you alone.</h2>
             </div>
             <p>
-              We open the actual operating layer: what is working, what is fragile,
-              and what would give you your time back. The agenda follows the room,
-              not a canned curriculum.
+              We work on what is holding, what keeps breaking, and what would give
+              you time back. The day follows the problem you bring.
             </p>
           </div>
 
           <div className="day-cards">
             {[
-              ["01", "Your operating system", "How the companies keep moving when life is full."],
-              ["02", "The judgment layer", "What to automate, what to protect, and what still needs you."],
-              ["03", "The room", "A small, fit-checked group of people with something real on the line."],
+              ["01", "What keeps breaking", "Find the part of the week that repeatedly steals your attention."],
+              ["02", "What still needs you", "Decide what only you should hold—and what should stop waiting for you."],
+              ["03", "Who is at the table", "A small room of people responsible for something real."],
             ].map(([number, title, text]) => (
               <article key={number}>
                 <span>{number}</span>
@@ -126,7 +126,7 @@ export default function GraceNetworkHome() {
 
           <div className="not-course">
             <p>This is not</p>
-            <span>prompt packs</span><span>a webinar</span><span>beginner AI</span><span>a recording</span>
+            <span>generic playbooks</span><span>a remote seminar</span><span>starter material</span><span>a recording</span>
           </div>
         </div>
       </section>
@@ -139,15 +139,14 @@ export default function GraceNetworkHome() {
             <p>CAD · paid upfront · one private day</p>
           </div>
           <div className="price-copy">
-            <h2>Expensive on purpose.</h2>
+            <h2>One day. $15,000 CAD.</h2>
             <p>
-              My time is the same time I use to run the businesses, the charity,
-              and my family. The price protects the room—and attracts people who
-              want operator-level judgment, not more content.
+              Paid upfront. My working time is scarce, and the room stays small.
+              You come for clear decisions, not more material.
             </p>
             <blockquote>
-              For the right person, this can change how everything runs.
-              For the wrong person, it&apos;s a hard no. Both are useful.
+              A private day should leave you with fewer moving parts and more
+              protected time.
             </blockquote>
           </div>
         </div>
@@ -163,15 +162,15 @@ export default function GraceNetworkHome() {
             <div>
               <h3>Come if</h3>
               {[
-                "You already use AI",
+                "You already make consequential decisions",
                 "You have real revenue, product, or capital",
-                "You want better systems—not more theory",
+                "You want fewer moving parts—not more theory",
               ].map((item) => <p key={item}><Check size={16} />{item}</p>)}
             </div>
             <div className="muted-list">
               <h3>Skip it if</h3>
               {[
-                "You need the beginner version",
+                "You need the fundamentals explained",
                 "You want templates to download",
                 "You can’t be in the room",
               ].map((item) => <p key={item}><X size={16} />{item}</p>)}
@@ -192,7 +191,7 @@ export default function GraceNetworkHome() {
         <div className="venue-card">
           <MapPin size={19} />
           <div className="eyebrow light">Lake Country, British Columbia</div>
-          <h2>A beautiful room for serious work.</h2>
+          <h2>One table above the Okanagan.</h2>
           <p>
             O&apos;Rourke Winery. In person, around one table. No hybrid option.
             No watch-later version.

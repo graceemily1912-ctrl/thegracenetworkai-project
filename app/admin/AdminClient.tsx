@@ -61,8 +61,8 @@ export default function AdminClient() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             ["Total Users", stats.totalUsers],
-            ["Workshop Attendees", stats.workshopAttendees],
-            ["Accelerator Paid", stats.acceleratorPaid],
+            ["Fit Sessions", stats.workshopAttendees],
+            ["Private Days Paid", stats.acceleratorPaid],
             ["Total Revenue (CAD)", `$${stats.totalRevenue}`],
           ].map(([label, val]) => (
             <Card key={String(label)} className="p-6 card-premium">

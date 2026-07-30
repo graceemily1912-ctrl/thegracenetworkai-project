@@ -3,7 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import React, { useState } from "react";
-import { useQuery, useMutation } from "convex/react";
+import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -17,14 +17,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import Link from "next/link";
 
-const STEPS = ["Your Details", "Business Systems", "Challenges & Goals", "Commitment & Submit"];
+const STEPS = ["Your details", "What you run", "What needs attention", "Availability"];
 
 export default function WorkshopPage() {
   const [step, setStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [applicationId, setApplicationId] = useState<string | null>(null);
-  const [score, setScore] = useState<number | null>(null);
 
   const [form, setForm] = useState({
     fullName: "",
@@ -42,7 +40,6 @@ export default function WorkshopPage() {
     referralSource: "",
   });
 
-  const workshops = useQuery(api.workshops.listOpenWorkshops) || [];
   const submitApplication = useMutation(api.applications.submitApplication);
 
   const systemsOptions = ["CRM / Sales", "Finance & Accounting", "Operations", "Marketing", "Customer Support", "HR / Talent", "Project Management", "Other"];
@@ -92,8 +89,6 @@ export default function WorkshopPage() {
         },
       });
 
-      setApplicationId(res.applicationId as any);
-      setScore(res.qualificationScore);
       setSubmitted(true);
       toast.success("Application received. Check your email for next steps.");
 
@@ -113,27 +108,15 @@ export default function WorkshopPage() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
             <div className="uppercase text-xs tracking-[3px] text-[#C5A46E]">IN-PERSON • LAKE COUNTRY, BC</div>
-            <h1 className="text-5xl tracking-[-1.8px] font-semibold mt-2">The AI Accelerator</h1>
+            <h1 className="text-5xl tracking-[-1.8px] font-semibold mt-2">Apply for the Private Day</h1>
             <p className="text-xl mt-3 text-[#6B7280]">
               $15,000 CAD — paid upfront. Includes 15-min fit consult. At O&apos;Rourke Winery. In-person only.
             </p>
           </div>
 
-          {/* Pricing tiers + dates */}
-          <div className="mb-10 grid md:grid-cols-3 gap-4">
-            {workshops.length > 0 ? workshops.map((w: any) => (
-              <Card key={w._id} className="card-premium p-6">
-                <div className="font-medium text-[#C5A46E]">{w.tier.toUpperCase()}</div>
-                <div className="text-4xl font-semibold mt-1 tracking-tighter">${w.price}</div>
-                <div className="text-sm text-[#6B7280] mt-1">{w.date} • {w.location}</div>
-                <div className="mt-4 text-sm">{w.capacity - w.spotsTaken} seats remaining</div>
-              </Card>
-            )) : (
-              <div className="col-span-3 p-8 border rounded-2xl bg-white text-center">
-                Dates announced monthly. Apply now and we’ll match you to the next open cohort.
-              </div>
-            )}
-          </div>
+          <p className="mb-10 border-y border-[#BDB7AC] py-5 text-sm text-[#59606A]">
+            Private dates are arranged personally. Apply and we’ll contact you about fit and availability.
+          </p>
 
           {!submitted ? (
             <Card className="card-premium p-8 md:p-10">
@@ -175,7 +158,7 @@ export default function WorkshopPage() {
                 {/* STEP 1 */}
                 {step === 1 && (
                   <div>
-                    <Label className="mb-3 block">Which business systems are you currently running? (select all that apply)</Label>
+                    <Label className="mb-3 block">Which parts of the business are you responsible for?</Label>
                     <div className="grid grid-cols-2 gap-3">
                       {systemsOptions.map((sys) => (
                         <label key={sys} className="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-[#F8F7F4]">
@@ -191,7 +174,7 @@ export default function WorkshopPage() {
                 {step === 2 && (
                   <div className="space-y-6">
                     <div>
-                      <Label>What are your biggest operational challenges right now?</Label>
+                      <Label>What is taking too much of your attention right now?</Label>
                       <Textarea className="mt-1.5 min-h-[120px] input-premium" value={form.currentChallenges} onChange={(e) => setForm({ ...form, currentChallenges: e.target.value })} required />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -221,19 +204,19 @@ export default function WorkshopPage() {
                       </div>
                     </div>
                     <div>
-                      <Label>Current AI Experience</Label>
+                      <Label>How established is the way you work?</Label>
                       <Select value={form.aiExperience} onValueChange={(v) => setForm({ ...form, aiExperience: (v || "none") as string })}>
                         <SelectTrigger className="mt-1.5"><SelectValue /></SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="none">None — curious beginner</SelectItem>
-                          <SelectItem value="beginner">Some experimentation</SelectItem>
-                          <SelectItem value="intermediate">Regular use in workflows</SelectItem>
-                          <SelectItem value="advanced">Advanced / building custom</SelectItem>
+                          <SelectItem value="none">Early — still building the foundation</SelectItem>
+                          <SelectItem value="beginner">Some repeatable systems</SelectItem>
+                          <SelectItem value="intermediate">Established operating rhythms</SelectItem>
+                          <SelectItem value="advanced">Advanced / deeply integrated</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div>
-                      <Label>Specific goals for this training (be detailed)</Label>
+                      <Label>What do you want to leave the day having decided?</Label>
                       <Textarea value={form.specificGoals} onChange={(e) => setForm({ ...form, specificGoals: e.target.value })} className="mt-1.5 min-h-[110px] input-premium" />
                     </div>
                   </div>
@@ -243,13 +226,13 @@ export default function WorkshopPage() {
                 {step === 3 && (
                   <div className="space-y-7">
                     <div>
-                      <Label>How willing are you to fully engage and implement? (1–5)</Label>
+                      <Label>How ready are you to be fully present? (1–5)</Label>
                       <input type="range" min={1} max={5} step="1" value={form.willingnessToLearn} onChange={(e) => setForm({ ...form, willingnessToLearn: parseInt(e.target.value) })} className="w-full accent-[#C5A46E] mt-3" />
                       <div className="text-right text-sm text-[#C5A46E] font-medium">{form.willingnessToLearn}/5</div>
                     </div>
 
                     <div>
-                      <Label>Time you can commit during the workshop</Label>
+                      <Label>Time you can commit during the private day</Label>
                       <Select value={form.timeCommitment} onValueChange={(v) => setForm({ ...form, timeCommitment: (v || "") as string })}>
                         <SelectTrigger className="mt-1.5"><SelectValue placeholder="Select commitment level" /></SelectTrigger>
                         <SelectContent>
@@ -266,7 +249,7 @@ export default function WorkshopPage() {
                     </div>
 
                     <div className="pt-4 text-sm bg-[#F8F7F4] p-5 rounded-xl border">
-                      By submitting you agree to our <a href="#" className="underline">Privacy Policy</a> and consent to being contacted about The Grace Network programs. Attendance at the Workshop is required to qualify for the Accelerator.
+                      By submitting you agree to our <a href="#" className="underline">Privacy Policy</a> and consent to being contacted about your application. Completion of the fit process is required before booking the private day.
                     </div>
                   </div>
                 )}
@@ -293,14 +276,14 @@ export default function WorkshopPage() {
                 ✓
               </div>
               <h2 className="text-3xl font-semibold tracking-tight">Application Submitted</h2>
-              <p className="mt-2 text-[#6B7280]">Thank you. Your qualification score: <span className="font-semibold text-[#0A1628]">{score}</span></p>
+              <p className="mt-2 text-[#6B7280]">Thank you. We&apos;ll contact you personally about fit and the next available date.</p>
 
               <div className="mt-8 space-y-4">
                 <Link href={`/thank-you?type=workshop&email=${encodeURIComponent(form.email)}`}>
-                  <Button className="navy-btn w-full h-12">View live application status →</Button>
+                  <Button className="navy-btn w-full h-12">View application status →</Button>
                 </Link>
 
-                <p className="text-sm text-[#6B7280]">We will contact you shortly to confirm your seat and payment link.</p>
+                <p className="text-sm text-[#6B7280]">Nothing is reserved until fit is mutual.</p>
               </div>
             </Card>
           )}

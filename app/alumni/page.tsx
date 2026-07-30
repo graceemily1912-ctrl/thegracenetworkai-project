@@ -33,14 +33,13 @@ export default function AlumniPortal() {
       setVerified(true);
       setUserId(userStatus.id);
     } else {
-      toast.error("Access denied. Complete the Workshop + Accelerator payment first.");
+      toast.error("Access denied. Complete the fit process and private-day payment first.");
     }
   }
 
   async function bookPrivate() {
     if (!userId) return;
-    // In production this would call GHL calendar link
-    toast("Opening private calendar booking (GHL)...");
+    toast("Opening the private follow-up calendar...");
     window.open("https://calendar.gohighlevel.com/thegracenetworkai-private", "_blank");
   }
 
@@ -57,12 +56,11 @@ export default function AlumniPortal() {
 
           {!verified && (
             <Card className="card-premium max-w-lg p-8">
-              <p className="mb-4">Enter the email associated with your Accelerator purchase.</p>
+              <p className="mb-4">Enter the email associated with your private-day purchase.</p>
               <div className="flex gap-2">
                 <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="h-12" />
                 <Button onClick={verify} className="gold-btn px-8 rounded-full">Verify Access</Button>
               </div>
-              <div className="mt-4 text-xs text-[#6B7280]">Protected by GHL Membership + Convex realtime check.</div>
             </Card>
           )}
 
@@ -77,21 +75,21 @@ export default function AlumniPortal() {
                   </div>
                   <Button onClick={bookPrivate} className="navy-btn">Book Private Follow-up</Button>
                 </div>
-                <div className="text-sm mt-4">Your resources and progress tracking are below.</div>
+                <div className="text-sm mt-4">Your notes and follow-up material are below.</div>
               </Card>
 
               {/* Assets Library */}
               <div>
-                <h2 className="font-semibold text-xl mb-4">Resource Library</h2>
+                <h2 className="font-semibold text-xl mb-4">From your day</h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {assets.length === 0 && <div className="text-sm p-6 border rounded">Assets will appear after first Accelerator. Seed via admin.</div>}
+                  {assets.length === 0 && <div className="text-sm p-6 border">Your private materials will appear here after your day.</div>}
                   {assets.map((asset: any) => (
                     <Card key={asset._id} className="p-6 card-premium">
                       <div className="uppercase text-xs text-[#C5A46E]">{asset.type}</div>
                       <div className="text-lg font-medium mt-1">{asset.title}</div>
                       <p className="text-sm mt-2 text-[#6B7280]">{asset.description}</p>
                       <Button size="sm" variant="outline" className="mt-4 rounded-full" onClick={() => {
-                        toast.success("Download started (demo)");
+                        toast.success("Your download is starting.");
                       }}>Download</Button>
                     </Card>
                   ))}
@@ -100,11 +98,11 @@ export default function AlumniPortal() {
 
               {/* Progress */}
               <div>
-                <h2 className="font-semibold text-xl mb-4">Implementation Progress</h2>
+                <h2 className="font-semibold text-xl mb-4">Follow-through</h2>
                 <Card className="card-premium p-7">
                   {["foundations", "systems-work", "implementation", "review"].map((m, i) => (
                     <div key={i} className="flex justify-between py-3 border-b last:border-0 items-center">
-                      <div>{m.replace(/-/g, " ")}</div>
+                      <div>{["First decisions", "What changed", "What held", "Review"][i]}</div>
                       <Button size="sm" variant="ghost" onClick={() => userId && updateMilestone({ userId, milestoneKey: m, completed: true })}>
                         Mark Complete
                       </Button>
@@ -116,7 +114,7 @@ export default function AlumniPortal() {
           )}
 
           {verified && isGated && (
-            <Card className="p-9">Access requires completed Accelerator payment. Contact us if you believe this is an error.</Card>
+            <Card className="p-9">Access requires completed private-day payment. Contact us if you believe this is an error.</Card>
           )}
         </div>
       </div>

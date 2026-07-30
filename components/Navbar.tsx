@@ -3,12 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 
 const CONSULT_URL = "https://calendar.gohighlevel.com/thegracenetworkai-private";
 
-export function Navbar() {
+export function Navbar({ overlay = false }: { overlay?: boolean }) {
   return (
-    <nav className="site-nav">
+    <nav className={`site-nav${overlay ? " overlay" : ""}`}>
       <div className="kola-container nav-inner">
         <Link href="/" className="brand">
-          <span>G</span>
           <strong>The Grace Network</strong>
         </Link>
         <div className="nav-links">
